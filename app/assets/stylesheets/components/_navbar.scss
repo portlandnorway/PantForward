@@ -4,7 +4,7 @@ $navbar-height: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $light-green;
+  background-color: $white;
   padding-left: 50px;
   padding-right: 50px;
   text-align: center;
@@ -17,7 +17,7 @@ $navbar-height: 65px;
 .navbar-icons {
   float: left;
   display: block;
-  color: $white;
+  color: $light-green;
   text-align: center;
   padding: 12px 12px;
   text-decoration: none;
@@ -28,7 +28,6 @@ $navbar-height: 65px;
 .navbar-icons:hover {
   color: $black;
   text-decoration: none;
-  background: white;
 }
 
 .navbar-icons:active {
