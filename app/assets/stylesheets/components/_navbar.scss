@@ -22,10 +22,12 @@ $navbar-height: 65px;
   padding: 12px 12px;
   text-decoration: none;
   font-size: 28px;
+  text-decoration: none;
 }
 
 .navbar-icons:hover {
   color: $black;
+  text-decoration: none;
 }
 
 .navbar-icons:active {
@@ -38,11 +40,25 @@ $navbar-height: 65px;
   margin-top: 10px;
 }
 
-// .round-button {
-//   background-color: $white;
-//   border: 2px solid $light-green;
-//   color: $light-green;
-//   border-radius: 50%;
-//   position: relative;
-//   bottom: 34px;
-// }
+.round-button {
+  background-color: $white;
+  border: 2px solid $light-green;
+  color: $light-green;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  bottom: 26px;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  i {
+    width: 28px;
+    height: 28px;
+    display: contents;
+  }
+}
+
+.round-button:hover {
+  border: 2px solid $black;
+}

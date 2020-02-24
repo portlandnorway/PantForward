@@ -4,12 +4,12 @@ body {
 
 h1 {
   font-weight: bold;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 h3 {
@@ -20,4 +20,9 @@ h3 {
 p {
   font-weight: light;
   font-size: 1em;
+  opacity: .7;
+}
+
+a {
+  color: black;
 }
