@@ -1,48 +1,12 @@
-$navbar-height: 65px;
-
-.custom-navbar {
-  display: flex;
+.navbar-lewagon {
   justify-content: space-between;
-  align-items: center;
-  background-color: $light-green;
-  padding-left: 50px;
-  padding-right: 50px;
-  text-align: center;
-  height: $navbar-height;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  background: white;
 }
 
-.navbar-icons {
-  float: left;
-  display: block;
-  color: $white;
-  text-align: center;
-  padding: 12px 12px;
-  text-decoration: none;
-  font-size: 28px;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
-.navbar-icons:hover {
-  color: $black;
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
-
-.navbar-icons:active {
-  color: $black;
-}
-
-.navbar-placeholder {
-  height: $navbar-height;
-  width: 100%;
-  margin-top: 10px;
-}
-
-// .round-button {
-//   background-color: $white;
-//   border: 2px solid $light-green;
-//   color: $light-green;
-//   border-radius: 50%;
-//   position: relative;
-//   bottom: 34px;
-// }
