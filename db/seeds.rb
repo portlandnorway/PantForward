@@ -12,6 +12,32 @@ puts "Clearing the db..."
 Collection.destroy_all
 User.destroy_all
 
+puts 'Creating admins...'
+
+1.times do
+  user = User.new(
+    email: 'nikolai@mangen.no',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
+    password: 'password'
+  )
+  user.save!
+end
+
+puts 'Done!'
+
+1.times do
+  user = User.new(
+    email: 'dennis.neely22@gmail.com',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
+    password: 'password'
+  )
+  user.save!
+end
+
 puts 'Creating 25 fake users...'
 25.times do
   user = User.new(
