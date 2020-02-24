@@ -2,13 +2,16 @@
 </div>
 
 <nav class="custom-navbar">
-  <div class="navbar-icons">
-    <i class="fas fa-list-ul"></i>
-  </div>
-  <div class="navbar-icons round-button">
+
+  <%= link_to root_path, class: "navbar-icons" do %>
+      <i class="fas fa-list-ul"></i>
+    <% end %>
+
+  <%= link_to new_collection_path, class: "navbar-icons round-button" do %>
       <i class="fas fa-plus"></i>
-  </div>
-  <div class="navbar-icons">
+    <% end %>
+
+    <%= link_to "https://www.youtube.com/watch?v=WdYnGPJ9OvY&list=PLBrS3_k7mRQWUA8FgMfhHK3_NIvxnpuBY&index=40&t=0s", class: "navbar-icons" do %>
       <i class="fas fa-user-circle"></i>
-  </div>
+    <% end %>
 </nav>
