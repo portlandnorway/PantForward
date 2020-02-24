@@ -1,2 +1,19 @@
-<h1>Collections#new</h1>
-<p>Find me in app/views/collections/new.html.erb</p>
+<div class="w-100 d-flex justify-content-center">
+  <%= image_tag("logo.png", height: '192px', width: '200px')%>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3 form-adjustments">
+      <div class="col">
+        <%= simple_form_for @collection do |f| %>
+          <%= f.input :address %>
+          <%= f.input :tip %>
+          <%= f.input :bottles %>
+          <%= f.input :details %>
+          <%= f.button :submit, class: "btn btn-primary btn-lg btn-block button-adjustments" %>
+        <% end %>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
