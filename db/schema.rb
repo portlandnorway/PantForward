@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_144109) do
+ActiveRecord::Schema.define(version: 2020_02_24_161511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_144109) do
     t.integer "tip"
     t.integer "bottles"
     t.string "details"
-    t.integer "status"
+    t.integer "status", default: 0
     t.date "date"
     t.time "time"
     t.bigint "user_id"

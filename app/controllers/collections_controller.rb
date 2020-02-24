@@ -29,9 +29,14 @@ class CollectionsController < ApplicationController
   end
 
   def new
+    @collection = Collection.new
   end
 
   def create
+    @collection = Collection.new(collection_params)
+    @collection.user = current_user
+    @collection.save
+    redirect_to root_path
   end
 
   private
@@ -41,6 +46,6 @@ class CollectionsController < ApplicationController
   end
 
   def collection_params
-    params.require(:collection).permit(:address, :tip, :bottles)
+    params.require(:collection).permit(:address, :tip, :bottles, :details)
   end
 end
