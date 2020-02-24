@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Log in and get a tractor</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <body>
+    <p class="notice popup-position"><%= notice %></p>
+    <p class="alert popup-position"><%= alert %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+          <div class="w-100 d-flex justify-content-center logo">
+          <%= image_tag("logo.png", height: '192px', width: '200px')%>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+</html>
+
+<!-- If it needs variables: , variable_name: the_value -->
