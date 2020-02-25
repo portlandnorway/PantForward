@@ -6,19 +6,7 @@
   <div class="row">
     <% @collections.each do |collection| %>
       <%= render "shared/card", element: collection %>
+      <%= render "shared/modal", element: collection %>
     <% end %>
   </div>
-</div>
-
-<button class="button" id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
 </div>
