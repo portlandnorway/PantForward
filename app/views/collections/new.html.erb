@@ -1,5 +1,5 @@
-<div class="w-100 d-flex justify-content-center">
-  <%= image_tag("logo.png", height: '192px', width: '200px')%>
+<div class="d-flex justify-content-center logo-adjustments">
+  <%= image_tag("logo.png", height: '100%', width: '250px')%>
   </div>
 <div class="container">
   <div class="row">
@@ -10,7 +10,9 @@
           <%= f.input :tip %>
           <%= f.input :bottles %>
           <%= f.input :details %>
-          <%= f.button :submit, class: "btn btn-primary btn-lg btn-block button-adjustments" %>
+          <div class="button-container">
+            <%= f.button :submit, class: "button" %>
+          </div>
         <% end %>
         <div>
         </div>
