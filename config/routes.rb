@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
 
   authenticated :user do
@@ -7,4 +8,5 @@ Rails.application.routes.draw do
   root :to => redirect("/users/sign_in")
 
   resources :collections,  only: %i[show new create]
+  resources :users, only: [:show], as: :dashboard
 end
