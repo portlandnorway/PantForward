@@ -14,21 +14,34 @@
 
 /* Modal Content/Box */
 .modal-content {
+  overflow: hidden;
   background-color: white;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 50%;
+  height: auto;
   border-radius: 12px;
 }
+
+/* Card content for modal */
+.modal-card-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-content img {
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 
 /* The Close Button */
 .close {
   color: $black;
-  float: left;
   font-size: 28px;
-  font-weight: bold;
+  text-align: end;
+  align-self: flex-end;
 }
 
 .close:hover,
@@ -37,3 +50,4 @@
   text-decoration: none;
   cursor: pointer;
 }
+

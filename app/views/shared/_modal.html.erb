@@ -1,13 +1,24 @@
-<!-- Trigger/Open The Modal -->
-<button class="button" id="myBtn">Open Modal</button>
-
 <!-- The Modal -->
-<div id="myModal" class="modal">
-
+<div id="myModal_<%= element.id %>" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <div class="modal-card-content">
+      <div>
+        <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
+      </div>
+      <div>
+        <div class="card-collect-infos">
+          <h3><%= element.user.first_name %> <%= element.user.last_name%></h3>
+          <p><%= element.address %></p>
+          <p><%= element.bottles %> bottles</p>
+          <p><%= element.tip %>kr</p>
+          <p>Total: <strong><%= element.bottles + element.tip %></strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <%= link_to "Book collection", collection_path(element) %>
+    </div>
   </div>
-
 </div>
