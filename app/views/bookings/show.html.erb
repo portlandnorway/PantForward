@@ -1,0 +1,29 @@
+
+<div class="text-center text-header">
+  <h3>Thanks for booking. With your help today, Norway gets one step closer to 100% recycling of all bottles and cans! Go get them!</h3>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6 align-self-center">
+      <% if @booking.user.avatar.attached? %>
+        <%= cl_image_tag @booking.user.avatar.photo.key, class:"donator-avatar" %>
+      <% else  %>
+        <img class="donator-avatar" src="" alt="">
+      <% end %>
+    </div>
+    <div class="col-sm-12 col-lg-6 align-self-center content-container-booking">
+        <h5><%= @booking.collection.address %>
+        <%= link_to '<i class="fas fa-map-marked-alt"></i>'.html_safe, "https://www.google.no/maps/place/#{@booking.collection.address}" %></h5>
+        <h5>Owner: <%= @booking.collection.user.first_name %> <%= @booking.collection.user.last_name %></h5>
+        <h5>Phone: <%= @booking.collection.user.phone_number %></h5>
+        <p>Note from <%= @booking.collection.user.first_name %>: <br /><i><%= @booking.collection.details %></i></p>
+      <div class="d-flex justify-content-around adjust-links">
+        <%= link_to "My bookings", dashboard_path, class:"btn btn-primary" %>
+        <%= link_to "Book more", root_path, class:"btn btn-primary pl-3 pr-3" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% flash.now[:alert] = "#{@booking.collection.tip} kr will be added to your account after pick-up is confirmed by the donor!" %>
