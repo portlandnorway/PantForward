@@ -5,10 +5,11 @@
     </div>
     <div>
       <%= link_to collection_path(element[:id]), {:class=>"card-collect-infos"} do %>
-<!--     <div class="card-collect-infos"> -->
-        <h3><%= "#{element.user.first_name} donates #{element.tip} kr"%></h3>
-        <p><%= element.address %></p>
+        <div class="card-collect-infos">
+          <h3><%= "#{element.user.first_name} donates #{element.tip} kr"%></h3>
+          <p><%= element.address %></p>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
