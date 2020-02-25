@@ -34,8 +34,10 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new(collection_params)
-    @collection.user = current_user
-    @collection.save
+    @collection.donator = current_user
+    @collection.collector = nil
+    @collection.save!
+    raise
     redirect_to dashboard_path(current_user)
   end
 
