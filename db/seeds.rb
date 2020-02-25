@@ -1,8 +1,8 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
+
 # Examples:
-#
+
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
@@ -93,11 +93,26 @@ users = User.all.to_a
     tip: Faker::Number.number(digits: 2),
     bottles: BOTTLES.sample,
     details: DETAILS.pop,
-    donator: users.pop,
-    collector: users.pop
+    user: users.sample
   )
   collection.save!
 end
 
-puts 'Finished with the collections!'
+puts "Done!"
+puts 'Creating 9 fake bookings...'
+
+collections = Collection.all
+counter = 0
+9.times do
+  c = collections[counter]
+  clean_users = User.all.reject { |user| user.id == c.user_id }
+  booking = Booking.new(
+    collection: c,
+    user: clean_users.sample,
+  )
+  booking.save!
+  counter += 1
+end
+
+puts 'Finished with the bookings!'
 puts "Do you want a tractor also? Download Get Tractors now!"
