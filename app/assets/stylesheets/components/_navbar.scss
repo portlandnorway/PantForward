@@ -4,7 +4,7 @@ $navbar-height: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $white;
+  background-color: white;
   padding-left: 50px;
   padding-right: 50px;
   text-align: center;
@@ -41,7 +41,7 @@ $navbar-height: 65px;
 }
 
 .round-button {
-  background-color: $white;
+  background-color: white;
   border: 2px solid $light-green;
   color: $light-green;
   border-radius: 50%;
