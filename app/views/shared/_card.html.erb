@@ -3,9 +3,12 @@
     <div>
       <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
     </div>
-    <div class="card-collect-infos">
-      <h3><%= link_to "#{element.user.first_name} donates #{element.tip} kr", element %></h3>
-      <p><%= element.address %></p>
+    <div>
+      <%= link_to collection_path(element[:id]), {:class=>"card-collect-infos"} do %>
+<!--     <div class="card-collect-infos"> -->
+        <h3><%= "#{element.user.first_name} donates #{element.tip} kr"%></h3>
+        <p><%= element.address %></p>
+      <% end %>
     </div>
   </div>
 </div>

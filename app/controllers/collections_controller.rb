@@ -36,7 +36,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user = current_user
     @collection.save
-    redirect_to root_path
+    redirect_to dashboard_path(current_user)
   end
 
   private
