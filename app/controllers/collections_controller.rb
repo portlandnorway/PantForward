@@ -13,17 +13,17 @@ class CollectionsController < ApplicationController
     # end
   end
 
-  # def map
-  #   @collections = Collection.geocoded #returns collections with coordinates
+  def map
+    @collections = Collection.geocoded #returns collections with coordinates
 
-  #   @markers = @collections.map do |collection|
-  #     {
-  #       lat: collection.latitude,
-  #       lng: collection.longitude,
-  #       infoWindow: render_to_string(partial: "info_window", locals: { collection: collection })
-  #     }
-  #   end
-  # end
+    @markers = @collections.map do |collection|
+      {
+        lat: collection.latitude,
+        lng: collection.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { collection: collection })
+      }
+    end
+  end
 
   def show
   end

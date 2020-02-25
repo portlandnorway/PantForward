@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :collections,  only: %i[show new create]
   resources :users, only: [:show], as: :dashboard
+  get '/map', to: 'collections#map', as: :map
 end

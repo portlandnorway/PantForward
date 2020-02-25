@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_122849) do
+ActiveRecord::Schema.define(version: 2020_02_25_140804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_122849) do
     t.datetime "updated_at", null: false
     t.bigint "donator_id"
     t.bigint "collector_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["collector_id"], name: "index_collections_on_collector_id"
     t.index ["donator_id"], name: "index_collections_on_donator_id"
   end
