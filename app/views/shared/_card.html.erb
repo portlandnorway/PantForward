@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
-  <div class="card-collect">
+  <div class="card-collect card-trigger" id="btn-<%= element.id %>" data-modal="myModal_<%= element.id %>">
     <div>
       <% if element.donator.avatar.attached? %>
         <%= cl_image_tag element.donator.avatar.key, class:"avatar-large", alt:"avatar-large" %>
@@ -8,10 +8,10 @@
       <% end %>
     </div>
     <div>
-      <%= link_to collection_path(element[:id]), {:class=>"card-collect-infos"} do %>
+      <div class="card-collect-infos">
         <h3><%= "#{element.donator.first_name} donates #{element.tip} kr"%></h3>
         <p><%= element.address %></p>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
