@@ -70,7 +70,8 @@ users = User.all.to_a
     tip: Faker::Number.number(digits: 2),
     bottles: BOTTLES.sample,
     details: DETAILS.pop,
-    user: users.pop,
+    donator: users.pop,
+    collector: users.pop
   )
   collection.save!
 end
