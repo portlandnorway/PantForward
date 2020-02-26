@@ -19,8 +19,15 @@
     <p><%= element.big_bottles + element.small_bottles %> bottles</p>
     <p><%= element.tip %>kr</p>
     <p>Total: <strong><%= element.reward %></strong></p>
-    <div class="button-container">
-      <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
+    <% if element.user != current_user %>
+      <div class="button-container">
+          <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
+        </div>
+      <% else %>
+        <div class="container">
+          <h3>Awaiting booking</h3>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
