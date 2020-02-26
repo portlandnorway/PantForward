@@ -10,12 +10,12 @@
   <i class="fas fa-map-marker-alt"></i>
 <% end %>
 
-<div class="dropdown">
+<div class="dropdown-neighborhoods">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Neighborhoods
   </button>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
     <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
       <%= link_to neighborhood, map_path(q:neighborhood), class: "dropdown-item" %>
     <% end %>
