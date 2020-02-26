@@ -1,24 +1,22 @@
-<div class="d-flex justify-content-center logo-adjustments">
-  <%= image_tag("logo.png", height: '100%', width: '250px')%>
-  </div>
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-6 offset-md-3 form-adjustments">
-      <div class="col">
+      <div class="d-flex justify-content-center logo-adjustments">
+        <%= image_tag("logo.png", height: '100%', width: '250px')%>
+      </div>
+      <div class="form">
         <%= simple_form_for @collection do |f| %>
-          <%= f.input :address %>
-          <%= f.input :neighborhood, collection: Collection::NEIGHBORHOODS %>
-          <%= f.input :tip %>
-          <%= f.input :bottles %>
-          <%= f.input :details %>
-          <div class="button-container">
-            <%= f.button :submit, class: "button" %>
-          </div>
-        <% end %>
-        <div>
+          <%= f.input :address, label: false, placeholder: "Address" %>
+          <%= f.input :neighborhood, label: false, collection: Collection::NEIGHBORHOODS,
+          placeholder: "Select neighborhood" %>
+          <%= f.input :tip, label: false, placeholder: "Tip" %>
+          <%= f.input :bottles, label: false, placeholder: "Bottles" %>
+          <%= f.input :details, label: false, placeholder: "Details" %>
+        <div class="button-container">
+          <%= f.button :submit, class: "button" %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
