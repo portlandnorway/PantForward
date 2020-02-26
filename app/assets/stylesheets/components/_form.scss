@@ -1,0 +1,22 @@
+.form-control {
+  background-color: white;
+  border-radius: 12px;
+  margin: 34px 0px;
+}
+
+.form-control:active {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.form-control:focus {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.form {
+  padding: 0 30px;
+  h2 {
+    text-align: center;
+  }
+}
