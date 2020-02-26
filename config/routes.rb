@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
   devise_for :users
 
   authenticated :user do
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show], as: :dashboard
-  get '/map', to: 'collections#map', as: :map
   resources :bookings, only: :show
+  get '/map', to: 'collections#map', as: :map
+  post '/bookings/:id', to: 'bookings#picked_up', as: :picked_up
 end

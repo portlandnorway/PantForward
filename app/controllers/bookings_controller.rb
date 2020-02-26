@@ -11,4 +11,11 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def picked_up
+    @booking = Booking.find(params[:id])
+    @booking.status = 1
+    @booking.save!
+    redirect_to dashboard_path
+  end
+
 end

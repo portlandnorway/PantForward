@@ -1,0 +1,20 @@
+<div class="col-sm-12 col-md-6 col-lg-4">
+  <%= link_to booking_path(element), {class:"card-collect"} do %>
+    <div>
+      <% if element.collection.user.avatar.attached? %>
+        <%= cl_image_tag element.collection.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+      <% else %>
+        <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
+      <% end %>
+    </div>
+    <div>
+      <div class="card-collect-infos">
+        <h3><%= "#{element.collection.user.first_name} donates #{element.collection.reward} kr"%></h3>
+        <p><%= element.collection.big_bottles + element.collection.small_bottles %> bottles</p>
+        <p><%= element.collection.tip %> kr</p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
