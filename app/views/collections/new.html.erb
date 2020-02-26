@@ -9,7 +9,8 @@
           <%= f.input :address %>
           <%= f.input :neighborhood, collection: Collection::NEIGHBORHOODS %>
           <%= f.input :tip %>
-          <%= f.input :bottles %>
+          <%= f.input :big_bottles %>
+          <%= f.input :small_bottles %>
           <%= f.input :details %>
           <div class="button-container">
             <%= f.button :submit, class: "button" %>
