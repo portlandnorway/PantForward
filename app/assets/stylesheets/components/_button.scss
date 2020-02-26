@@ -17,6 +17,12 @@
   margin-top: 50px;
 }
 
+.two-buttons-container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
 .button a {
   text-decoration: none;
   color: $light-green;
