@@ -9,3 +9,20 @@
 <%= link_to root_path, class: "map-marker" do %>
   <i class="fas fa-map-marker-alt"></i>
 <% end %>
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Neighborhoods
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
+      <%= link_to neighborhood, map_path(q:neighborhood), class: "dropdown-item" %>
+    <% end %>
+  </div>
+</div>
+
+  <%#= link_to "Reward", root_path(q:'reward'), class: "dropdown-item" %>
+  <%#= link_to "Newest", root_path(q:'newest'), class: "dropdown-item" %>
+  <%#= link_to "Oldest", root_path(q:'oldest'), class: "dropdown-item" %>
+

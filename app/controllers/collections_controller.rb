@@ -2,20 +2,26 @@ class CollectionsController < ApplicationController
   before_action :find_collection, only: %i[show]
 
   def index
-    # if params['q'] == 'reward'
-    #   @collections = Collection.order(reward: :desc)
-    # elsif params['q'] == 'oldest'
-    #   @collections = Collection.order(created_at: :asc)
-    # elsif params['q'] == 'newest'
-    #   @collections = Collection.order(created_at: :desc)
-    # else
-    @collections = Collection.order(created_at: :desc)
-    # end
+    Collection::NEIGHBORHOODS.each do |neighborhood|
+      if params['q'] == neighborhood
+        @collections = Collection.where(neighborhood: neighborhood)
+        break
+      else
+        @collections = Collection.order(created_at: :desc)
+      end
+    end
   end
 
   def map
-    @collections = Collection.geocoded #returns collections with coordinates
-
+    Collection::NEIGHBORHOODS.each do |neighborhood|
+      if params['q'] == neighborhood
+        @collections = Collection.where(neighborhood: neighborhood).geocoded
+        break
+      else
+        @collections = Collection.geocoded #returns collections with coordinates
+      end
+    end
+    # raise
     @markers = @collections.map do |collection|
       {
         lat: collection.latitude,
@@ -46,6 +52,6 @@ class CollectionsController < ApplicationController
   end
 
   def collection_params
-    params.require(:collection).permit(:address, :tip, :bottles, :details)
+    params.require(:collection).permit(:address, :tip, :bottles, :details, :neighborhood)
   end
 end
