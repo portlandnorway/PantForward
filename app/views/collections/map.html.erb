@@ -1,24 +1,21 @@
-<div
-  id="map"
-  style="width: 100%;
-  height: 90vh;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+<div>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 90vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+  <div class="dropdown-neighborhoods button-map-position">
+    <button class="button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Neighborhoods
+    </button>
 
-<%= link_to root_path, class: "map-marker" do %>
-  <i class="fas fa-map-marker-alt"></i>
-<% end %>
-
-<div class="dropdown-neighborhoods">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Neighborhoods
-  </button>
-
-  <div class="dropdown-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
-    <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
-      <%= link_to neighborhood, map_path(q:neighborhood), class: "dropdown-item" %>
-    <% end %>
+    <div class="dropdown-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
+      <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
+        <%= link_to neighborhood, map_path(q:neighborhood), class: "dropdown-item" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
