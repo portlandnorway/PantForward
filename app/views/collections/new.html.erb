@@ -6,7 +6,8 @@
       </div>
       <div class="form">
         <%= simple_form_for @collection do |f| %>
-          <%= f.input :address, label: false, placeholder: "Address" %>
+          <%= f.input :address, label: false, placeholder: "Address", input_html: {
+        id:"collection_address"} %>
           <%= f.input :neighborhood, label: false, collection: Collection::NEIGHBORHOODS,
           placeholder: "Select neighborhood" %>
           <%= f.input :tip, label: false, placeholder: "Tip" %>
