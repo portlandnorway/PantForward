@@ -1,35 +1,5 @@
 <!-- The Modal -->
 <div id="myModal_<%= element.id %>" class="modal">
   <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="modal-card-content">
-      <div>
-        <% if element.user.avatar.attached? %>
-          <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
-        <% else %>
-          <i class="fas fa-user-circle avatar-large"></i>
-        <% end %>
-      </div>
-
-      <div class="card-collect-infos">
-        <h3><%= element.user.first_name %> <%= element.user.last_name%></h3>
-        <p><%= element.address %></p>
-      </div>
-    </div>
-    <div>
-      <p><%= element.big_bottles + element.small_bottles %> bottles</p>
-      <p><%= element.tip %>kr</p>
-      <p>Total: <strong><%= element.reward %></strong></p>
-      <% if element.user != current_user %>
-        <div class="button-container">
-          <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
-        </div>
-      <% else %>
-        <div class="container">
-          <h3>Awaiting booking</h3>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'modal_content', element: element %>
 </div>

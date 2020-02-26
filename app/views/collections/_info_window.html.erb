@@ -1,14 +1,21 @@
-<!-- app/views/collections/_info_window.html.erb -->
-
-<div class="card">
-  <% if collection.user.avatar.attached? %>
-    <%= cl_image_tag collection.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
-  <% else  %>
-    <%= image_tag "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", class:"card-img-top" %>
-  <% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= collection.user.first_name %></h5>
-    <p class="card-text"><%= collection.tip %>kr</p>
-    <%#= link_to 'Learn more', c_path(tractor), class:"btn btn-primary" %>
+<div class="modal-content">
+  <div class="modal-card-content">
+    <div>
+      <% if collection.user.avatar.attached? %>
+        <%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
+      <% else %>
+        <i class="fas fa-user-circle avatar-large"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-collect-infos">
+    <h3><%= collection.user.first_name %></h3>
+    <p>Collect <%= collection.tip %>kr</p>
+    <div class="button-container">
+      <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
+    </div>
   </div>
 </div>
+
+
+

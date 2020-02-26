@@ -1,7 +1,12 @@
-.avatar {
-  width: 40px;
+.avatar-small {
   border-radius: 50%;
+  font-size: 70px;
+  color: $light-green;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 70px;
+  margin: 10px 0px;
 }
+
 .avatar-large {
   /* width: 56px; */
   border-radius: 50%;
