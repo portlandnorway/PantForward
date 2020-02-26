@@ -19,15 +19,50 @@
     <h3>Your pending collections</h3>
     <p>To be collected</p>
   </div>
+  <div class="container" id='booked'>
+    <div class="row">
+     <% current_user.bookings.each do |booking| %>
+        <% if booking.status == 'booked' %>
+          <%= render "shared/bookingCard", element: booking %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="header-wrapper">
-    <h3>Collected</h3>
+    <h3>Waiting for confirmation</h3>
+    <p>Great job! The donator has been notified, and will confirm soon.</p>
+  </div>
+  <div class="row" id='picked_up'>
+     <% current_user.bookings.each do |booking| %>
+      <% if booking.status == 'picked_up' %>
+        <%= render "shared/bookingCard", element: booking %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="header-wrapper">
+    <h3>History</h3>
+    <p>Confirmed pickups.</p>
+  </div>
+  <div class="row" id='confirmed'>
+     <% current_user.bookings.each do |booking| %>
+      <% if booking.status == 'confirmed' %>
+        <%= render "shared/bookingCard", element: booking %>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="header-wrapper">
+    <h3>Donated</h3>
     <p>You have currently collected: 0kr</p>
   </div>
   <div class="container">
     <div class="row">
      <% current_user.collections.each do |collection| %>
         <%= render "shared/card", element: collection %>
+        <%= render "shared/modal", element: collection %>
       <% end %>
     </div>
   </div>
