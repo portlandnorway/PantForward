@@ -10,7 +10,8 @@
           <%= f.input :neighborhood, label: false, collection: Collection::NEIGHBORHOODS,
           placeholder: "Select neighborhood" %>
           <%= f.input :tip, label: false, placeholder: "Tip" %>
-          <%= f.input :bottles, label: false, placeholder: "Bottles" %>
+          <%= f.input :big_bottles, label: false, placeholder: "# of Bottles" %>
+          <%= f.input :small_bottles, label: false, placeholder: "# of Bottles" %>
           <%= f.input :details, label: false, placeholder: "Details" %>
         <div class="button-container">
           <%= f.button :submit, class: "button" %>

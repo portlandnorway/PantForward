@@ -22,6 +22,8 @@ puts 'Creating admins...'
     phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
     password: 'password'
   )
+  file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582724459/nik_kb5ymb.jpg')
+  user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
   user.save!
 end
 
@@ -35,6 +37,8 @@ puts 'Done!'
     phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
     password: 'password'
   )
+  file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582724464/dennis_g5xojh.png')
+  user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
   user.save!
 end
 
@@ -82,21 +86,28 @@ puts 'Finished with the users!'
 
 ADDRESSES = ["Kirsten Flagstads Plass 1, 0150 Oslo", "Karl Johans gate 11, 0154 Oslo", "Landgangen 1, 0252 Oslo", "Tjuvholmen allé 2, 0252 Oslo", "Schweigaards gate 34C, 0191 Oslo", "Trondheimsveien 64, 0565 Oslo", "Hagegata 27, 0653 Oslo", "Olaf Ryes plass 8, 0552 Oslo", "Seilduksgata 15A, 0553 Oslo"]
 
-NEIGHBORHOODS = ["Sentrum", "Sentrum", "Sentrum", "Sentrum", "Gamle Oslo", "Gamle Oslo", "Grūnerløkka - Sofienberg", "Gamle Oslo", "Grūnerløkka - Sofienberg", "Grūnerløkka - Sofienberg"]
+NEIGHBORHOODS = ["Sentrum", "Sentrum", "Sentrum", "Sentrum", "Gamle Oslo", "Grūnerløkka - Sofienberg", "Gamle Oslo", "Grūnerløkka - Sofienberg", "Grūnerløkka - Sofienberg"]
 
 DETAILS = ["I've left the bottles just outside the front gate. Cheers!", "Thanks! The cans are just behind the plant on the front porch. You can't miss it :)", "Thanks! Call me if there are any issues.", "Thanks for your help. I will be at work but just text me if you can't find the bag.", "Hey! Just ring the bell when you get inside. I'll buzz you in to let you grab the bottles. Our company is on the 4th floor!", "Text me if you can't find it.", "Should be easy to find but call me if you have any trouble.", "My apartment can be a bit hard to find, look for the gate next to the red door and just send me a text when you're close.", "Send me a text when you get here!", "Just look for my name and hit the buzzer! I'll come down with the bottles :)"]
 
-BOTTLES = [10, 15, 20, 25, 30, 50, 100, 10, 10, 10, 20, 20, 25, 10, 10, 5, 5, 20]
-
+SMALL_BOTTLES = [10, 15, 20, 25, 5, 5, 5, 30, 50, 100, 10, 10, 10, 20, 20, 25, 10, 10, 5, 5, 20]
+BIG_BOTTLES = [0, 0, 0, 0, 5, 5, 5, 2, 2, 3, 3, 1, 10, 20, 25, 5, 5, 0, 3, 1, 2]
+TIP = [0, 10, 20, 25, 0, 10, 20, 10, 20, 30, 40, 50, 100]
 puts 'Creating 9 fake collections...'
 
 users = User.all.to_a
 
 9.times do
+  sb = SMALL_BOTTLES.sample
+  bb = BIG_BOTTLES.sample
+  t = TIP.sample
+  r = (sb*2) + (bb*3) + t
   collection = Collection.new(
     address: ADDRESSES.pop,
-    tip: Faker::Number.number(digits: 2),
-    bottles: BOTTLES.sample,
+    tip: t,
+    small_bottles: sb,
+    big_bottles: bb,
+    reward: r,
     details: DETAILS.pop,
     user: users.sample,
     neighborhood: NEIGHBORHOODS.pop

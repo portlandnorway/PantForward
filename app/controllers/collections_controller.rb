@@ -5,7 +5,10 @@ class CollectionsController < ApplicationController
     Collection::NEIGHBORHOODS.each do |neighborhood|
       if params['q'] == neighborhood
         @collections = Collection.where(neighborhood: neighborhood)
+        @collections = @collections.order(reward: :desc)
         break
+      elsif params['q'] == 'reward'
+        @collections = Collection.order(reward: :desc)
       else
         @collections = Collection.order(created_at: :desc)
       end
@@ -41,17 +44,22 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     @collection.user = current_user
+    @collection.reward = reward_calculation(@collection)
     @collection.save!
     redirect_to dashboard_path(current_user)
   end
 
   private
 
+  def reward_calculation(collection)
+    (collection.big_bottles * 3) + (collection.small_bottles * 2) + collection.tip
+  end
+
   def find_collection
     @collection = Collection.find(params[:id])
   end
 
   def collection_params
-    params.require(:collection).permit(:address, :tip, :bottles, :details, :neighborhood)
+    params.require(:collection).permit(:address, :tip, :big_bottles, :small_bottles, :details, :neighborhood)
   end
 end

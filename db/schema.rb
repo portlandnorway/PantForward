@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_171741) do
+ActiveRecord::Schema.define(version: 2020_02_26_132320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_171741) do
     t.bigint "collection_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["collection_id"], name: "index_bookings_on_collection_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -48,15 +49,16 @@ ActiveRecord::Schema.define(version: 2020_02_25_171741) do
   create_table "collections", force: :cascade do |t|
     t.string "address"
     t.integer "tip"
-    t.integer "bottles"
     t.string "details"
-    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.bigint "user_id"
     t.string "neighborhood"
+    t.integer "big_bottles"
+    t.integer "small_bottles"
+    t.integer "reward", default: 0
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
