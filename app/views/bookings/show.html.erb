@@ -15,19 +15,34 @@
     <div class="col-sm-12 col-lg-6">
         <h5><%= @booking.collection.address %>
         <%= link_to '<i class="fas fa-map-marked-alt"></i>'.html_safe, "https://www.google.no/maps/place/#{@booking.collection.address}" %></h5>
-        <h5>Owner: <%= @booking.collection.user.first_name %> <%= @booking.collection.user.last_name %></h5>
         <h5>Phone: <%= @booking.collection.user.phone_number %></h5>
         <p>Note from <%= @booking.collection.user.first_name %>: <br /><i><%= @booking.collection.details %></i></p>
-      <div class="two-buttons-container">
+
+      <div class="d-flex justify-content-center">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 40vh;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+
+
+
+
+      <div class="button-container">
         <% if @booking.status == 'booked' %>
           <%= link_to "Mark as collected", booking_path(@booking), method: :post, class:"button" %>
         <% elsif %>
           "Do we want something here?"
         <% end %>
-        <%= link_to "Collect more", root_path, class:"button" %>
       </div>
     </div>
   </div>
+
+
+
 </div>
 
 
