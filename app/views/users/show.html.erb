@@ -17,7 +17,11 @@
 
   <div class="header-wrapper">
     <h3>Your pending collections</h3>
-    <p>To be collected</p>
+    <% if current_user.bookings.booked.any? %>
+      <p>To be collected. Go get them now!</p>
+    <% else %>
+      <p> Nothing booked. Head to the map to get another!</p>
+    <% end %>
   </div>
   <div class="container" id='booked'>
     <div class="row">
@@ -30,42 +34,54 @@
   </div>
 
   <div class="header-wrapper">
-    <h3>Waiting for confirmation</h3>
-    <p>Great job! The donator has been notified, and will confirm soon.</p>
+    <h3>Waiting for confirmation:</h3>
+    <% if current_user.bookings.picked_up.any? %>
+      <p>Great job! The donator has been notified, and will confirm soon.</p>
+    <% else %>
+      <p> Nothing picked up. Go grab some more!</p>
+    <% end %>
   </div>
   <div class="row" id='picked_up'>
      <% current_user.bookings.each do |booking| %>
-      <% if booking.status == 'picked_up' %>
+      <% if booking.picked_up? %>
         <%= render "shared/bookingCard", element: booking %>
       <% end %>
     <% end %>
+  </div>
+
+  <div class="header-wrapper">
+    <h3>Your current donations:</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% current_user.collections.each do |donation| %>
+        <% if !donation.bookings.last.confirmed? %>
+          <%= render "shared/card_donator", element: collection %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div class="header-wrapper">
     <h3>History</h3>
-    <p>Confirmed pickups.</p>
+    <p>You have made approximately: "X amount of kroner here" </p>
+    <p>You have collected: "X amount of bottles here" </p>
+    <p>You have have saved the mothereffing earth fact here" </p>
+    <p>Confirmed:</p>
   </div>
   <div class="row" id='confirmed'>
      <% current_user.bookings.each do |booking| %>
-      <% if booking.status == 'confirmed' %>
+      <% if booking.confirmed? %>
         <%= render "shared/bookingCard", element: booking %>
+      <% end %>
+    <% end %>
+    <% current_user.collections.each do |donation| %>
+      <% if donation.bookings.last.confirmed? %>
+        <%= render "shared/card", element: donation %>
       <% end %>
     <% end %>
   </div>
 
-
-  <div class="header-wrapper">
-    <h3>Donated</h3>
-    <p>You have currently collected: 0kr</p>
-  </div>
-  <div class="container">
-    <div class="row">
-     <% current_user.collections.each do |collection| %>
-        <%= render "shared/card", element: collection %>
-        <%= render "shared/modal", element: collection %>
-      <% end %>
-    </div>
-  </div>
   <div class="button-container">
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"button", style: "width: auto" %>
   </div>
