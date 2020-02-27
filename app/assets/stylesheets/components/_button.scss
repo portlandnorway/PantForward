@@ -50,6 +50,10 @@
   }
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button-map-position {
   position: fixed;
   bottom: 100px;
