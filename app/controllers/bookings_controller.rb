@@ -9,6 +9,13 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @marker =
+      {
+        lat: @booking.collection.latitude,
+        lng: @booking.collection.longitude,
+        infoWindow: render_to_string(partial: "shared/info_window", locals: { collection: @booking.collection }),
+        image_url: helpers.asset_url('bottle')
+      }
   end
 
   def picked_up
