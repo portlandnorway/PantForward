@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :find_collection, only: %i[show]
+  before_action :find_collection, only: %i[show edit update destroy]
 
   def index
     Collection::NEIGHBORHOODS.each do |neighborhood|
@@ -49,7 +49,20 @@ class CollectionsController < ApplicationController
     @collection.user = current_user
     @collection.reward = reward_calculation(@collection)
     @collection.save!
-    redirect_to dashboard_path(current_user)
+    redirect_to dashboard_path
+  end
+
+  def edit
+  end
+
+  def update
+    @collection.update(collection_params)
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    @collection.destroy
+    redirect_to dashboard_path
   end
 
   private
