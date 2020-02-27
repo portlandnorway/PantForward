@@ -5,12 +5,15 @@ class CollectionsController < ApplicationController
     Collection::NEIGHBORHOODS.each do |neighborhood|
       if params['q'] == neighborhood
         @collections = Collection.where(neighborhood: neighborhood)
+        @collections.select { |c| c.bookings.empty? }
         @collections = @collections.order(reward: :desc)
         break
       elsif params['q'] == 'reward'
-        @collections = Collection.order(reward: :desc)
+        @collections = Collection.order(reward: :desc).select { |c| c.bookings.empty? }
+        # @collections.select { |c| c.bookings.empty?}
       else
-        @collections = Collection.order(created_at: :desc)
+        @collections = Collection.order(created_at: :desc).select { |c| c.bookings.empty? }
+        # @collections.select { |c| c.bookings.empty?}
       end
     end
   end

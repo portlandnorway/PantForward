@@ -20,7 +20,7 @@
     <p>Total: <strong><%= element.reward %></strong></p>
     <% if element.user != current_user %>
       <div class="button-container">
-        <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
+        <%= link_to "Book collection", collection_bookings_path(element), method: :post, remote: true, class:"button" %>
       </div>
     <% end %>
   </div>

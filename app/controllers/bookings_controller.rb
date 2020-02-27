@@ -1,10 +1,11 @@
 class BookingsController < ApplicationController
   before_action :find_booking, except: :create
 
+  # AJAX request!
   def create
-    @booking = current_user.bookings.new(collection_id: params[:collection_id])
+    @collection = Collection.find(params[:collection_id])
+    @booking = current_user.bookings.new(collection: @collection)
     @booking.save
-    redirect_to booking_path(@booking)
   end
 
   def show

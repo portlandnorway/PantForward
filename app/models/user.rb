@@ -11,4 +11,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
 
   has_one_attached :avatar
+
+  validate :validate_images
+
 end
