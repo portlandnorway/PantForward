@@ -1,18 +1,14 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
   <div class="card-collect card-trigger" id="btn-<%= element.id %>" data-modal="myModal_<%= element.id %>">
-    <div>
-      <% if element.user.avatar.attached? %>
-        <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
-      <% else %>
-        <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
-      <% end %>
-    </div>
-    <div>
-      <div class="card-collect-infos">
-        <h3><%= "#{element.user.first_name} donates #{element.reward} kr"%></h3>
-        <p><%= element.big_bottles + element.small_bottles %> bottles</p>
-        <p><%= element.tip %> kr</p>
-      </div>
+    <% if element.user.avatar.attached? %>
+      <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+    <% else %>
+      <i class="fas fa-user-circle avatar-large"></i>
+    <% end %>
+    <div class="card-collect-infos">
+      <h4>Reward: <%= element.reward %>kr</h4>
+      <p><%= element.big_bottles + element.small_bottles %> bottles</p>
+      <p><%= element.tip %> kr</p>
     </div>
   </div>
 </div>

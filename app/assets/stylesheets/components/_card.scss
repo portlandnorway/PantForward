@@ -29,8 +29,9 @@
 
 /* Add some padding inside the card container */
 
-.card-collect .card-collect-infos {
+.card-collect-infos {
   padding: 10px;
+  min-width: 255px
 }
 
 .card-collect-infos a {
