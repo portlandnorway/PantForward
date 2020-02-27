@@ -11,7 +11,7 @@
       Neighborhoods
     </button>
 
-    <div class="dropdown-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu scrollable-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
       <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
         <%= link_to neighborhood, map_path(q:neighborhood), class: "dropdown-item" %>
       <% end %>

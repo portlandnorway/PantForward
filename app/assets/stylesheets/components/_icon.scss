@@ -1,6 +1,6 @@
 .map-marker {
   background-color: white;
-  color: $light-green;
+  color: $black;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -40,4 +40,9 @@
   p {
     margin-right: 2em;
   }
+}
+
+.close {
+  margin-top: 10px;
+  margin-right: 10px;
 }
