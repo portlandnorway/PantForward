@@ -24,12 +24,13 @@ class CollectionsController < ApplicationController
         @collections = Collection.geocoded #returns collections with coordinates
       end
     end
-    # raise
+
     @markers = @collections.map do |collection|
       {
         lat: collection.latitude,
         lng: collection.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { collection: collection })
+        infoWindow: render_to_string(partial: "info_window", locals: { collection: collection }),
+        image_url: helpers.asset_url('bottle')
       }
     end
   end
