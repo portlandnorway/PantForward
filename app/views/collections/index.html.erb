@@ -1,11 +1,11 @@
 <div class="container">
   <div class="two-buttons-container">
     <div class="dropdown-neighborhoods">
-      <button class="button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="button dropdown-toggle scrollable-menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Neighborhoods
       </button>
 
-      <div class="dropdown-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu scrollable-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
         <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
           <%= link_to neighborhood, root_path(q:neighborhood), class: "dropdown-item" %>
         <% end %>
@@ -13,11 +13,11 @@
     </div>
 
     <div class="dropdown-filters">
-      <button class="button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="button dropdown-toggle scrollable-menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Filter by
       </button>
 
-      <div class="dropdown-menu" id="filters" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu scrollable-menu" id="filters" aria-labelledby="dropdownMenuButton">
         <%= link_to "Reward", root_path(q:'reward'), class: "dropdown-item" %>
         <%= link_to "Newest", root_path(q:'newest'), class: "dropdown-item" %>
       </div>
@@ -32,6 +32,7 @@
     <% end %>
   </div>
 </div>
+
 <%= link_to map_path, class: "map-marker" do %>
   <i class="fas fa-map-marker-alt"></i>
 <% end %>
