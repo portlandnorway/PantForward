@@ -55,8 +55,8 @@
   <div class="container">
     <div class="row">
       <% current_user.collections.each do |donation| %>
-        <% if !donation.bookings.last.confirmed? %>
-          <%= render "shared/card_donator", element: collection %>
+        <% if !donation.bookings.empty? && !donation.bookings.last.confirmed? %>
+          <%= render "shared/card_donator", element: donation %>
         <% end %>
       <% end %>
     </div>
@@ -76,7 +76,7 @@
       <% end %>
     <% end %>
     <% current_user.collections.each do |donation| %>
-      <% if donation.bookings.last.confirmed? %>
+      <% if !donation.bookings.empty? && donation.bookings.last.confirmed? %>
         <%= render "shared/card", element: donation %>
       <% end %>
     <% end %>

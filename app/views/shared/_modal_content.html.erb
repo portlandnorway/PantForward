@@ -1,6 +1,5 @@
 <div class="modal-content">
   <span class="close">&times;</span>
-
   <div class="modal-card-content">
     <div>
       <% if element.user.avatar.attached? %>
@@ -15,13 +14,22 @@
       <div class="two-icons-container">
         <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
         <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
+        <% if element.user != current_user %>
+          <div class="button-container">
+            <%= link_to "Book collection", collection_bookings_path(element), method: :post, remote: true, class:"button" %>
+          </div>
+        <% end %>
       </div>
     </div>
-  </div>
-  <% if element.user != current_user %>
-    <div class="button-container">
-      <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
-    </div>
-  <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
 

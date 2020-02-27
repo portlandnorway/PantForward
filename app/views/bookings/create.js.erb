@@ -1,0 +1,5 @@
+<% if @booking.valid? %>
+  window.location = '<%= dashboard_path(current_user) %>';
+<% else %>
+  alert('You have reached the booking limit! Please complete a pick-up to continue!');
+<% end %>
