@@ -7,8 +7,11 @@
     <% end %>
     <div class="card-collect-infos">
       <h4>Reward: <%= element.reward %>kr</h4>
-      <p><%= element.big_bottles + element.small_bottles %> bottles</p>
-      <p><%= element.tip %> kr</p>
+      <p>Donated by: <%= element.user.first_name %> <%= element.user.last_name %></p>
+      <div class="two-icons-container">
+        <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
+        <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
+      </div>
     </div>
   </div>
 </div>
