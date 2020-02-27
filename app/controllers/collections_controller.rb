@@ -10,10 +10,8 @@ class CollectionsController < ApplicationController
         break
       elsif params['q'] == 'reward'
         @collections = Collection.order(reward: :desc).select { |c| c.bookings.empty? }
-        # @collections.select { |c| c.bookings.empty?}
       else
         @collections = Collection.order(created_at: :desc).select { |c| c.bookings.empty? }
-        # @collections.select { |c| c.bookings.empty?}
       end
     end
   end
@@ -21,10 +19,11 @@ class CollectionsController < ApplicationController
   def map
     Collection::NEIGHBORHOODS.each do |neighborhood|
       if params['q'] == neighborhood
-        @collections = Collection.where(neighborhood: neighborhood).geocoded
+        @collections = Collection.where(neighborhood: neighborhood)
+        @collections.select { |c| c.bookings.empty? }
         break
       else
-        @collections = Collection.geocoded #returns collections with coordinates
+        @collections = Collection.all.select { |c| c.bookings.empty? }
       end
     end
 
