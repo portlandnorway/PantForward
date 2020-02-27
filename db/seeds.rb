@@ -10,52 +10,52 @@ require "open-uri"
 
 puts "Clearing the db..."
 Collection.destroy_all
-# User.destroy_all
+User.destroy_all
 
-# puts 'Creating admins...'
+puts 'Creating admins...'
 
-# 1.times do
-#   user = User.new(
-#     email: 'nikolai@mangen.no',
-#     first_name: 'Nikolai',
-#     last_name: 'Toverud',
-#     phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
-#     password: 'password'
-#   )
-#   file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582724459/nik_kb5ymb.jpg')
-#   user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
-#   user.save!
-# end
+1.times do
+  user = User.new(
+    email: 'nikolai@mangen.no',
+    first_name: 'Nikolai',
+    last_name: 'Toverud',
+    phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
+    password: 'password'
+  )
+  file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582724459/nik_kb5ymb.jpg')
+  user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
+  user.save!
+end
 
-# puts 'Done!'
+puts 'Done!'
 
-# 1.times do
-#   user = User.new(
-#     email: 'dennis.neely22@gmail.com',
-#     first_name: 'Dennis',
-#     last_name: 'Neely',
-#     phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
-#     password: 'password'
-#   )
-#   file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582724464/dennis_g5xojh.png')
-#   user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
-#   user.save!
-# end
+1.times do
+  user = User.new(
+    email: 'dennis.neely22@gmail.com',
+    first_name: 'Dennis',
+    last_name: 'Neely',
+    phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
+    password: 'password'
+  )
+  file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582724464/dennis_g5xojh.png')
+  user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
+  user.save!
+end
 
-# puts 'Creating test user: test@test.com password: password'
+puts 'Creating test user: test@test.com password: password'
 
-# 1.times do
-#   user = User.new(
-#     email: 'test@test.com',
-#     first_name: 'Test',
-#     last_name: 'Client',
-#     phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
-#     password: 'password'
-#   )
-#   file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582727861/yKxsZBXPxxPyio76Wd1TKAtt.jpg')
-#   user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
-#   user.save!
-# end
+1.times do
+  user = User.new(
+    email: 'test@test.com',
+    first_name: 'Test',
+    last_name: 'Client',
+    phone_number: Faker::PhoneNumber.subscriber_number(length: 8),
+    password: 'password'
+  )
+  file = URI.open('https://res.cloudinary.com/dory4tmkz/image/upload/v1582727861/yKxsZBXPxxPyio76Wd1TKAtt.jpg')
+  user.avatar.attach(io: file, filename: 'avatar.png', content_type: 'image/png')
+  user.save!
+end
 
 MALES = ["https://images.unsplash.com/photo-1542909168-6296a31d7689?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1546458904-143d1674858d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1578176603894-57973e38890f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1505975410356-cec53a6cdec9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1540574573343-bdd23b70c48b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1517588632672-9758d6acba04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1578597096845-8854485e8753?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1505247964246-1f0a90443c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1515175704145-8a06ffce6b77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1564061170517-d3907caa96ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1556541516-6df3db2bc84f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"]
 
