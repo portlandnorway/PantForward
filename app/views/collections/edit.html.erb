@@ -6,6 +6,9 @@
       </div>
       <div class="form">
         <%= render 'collection_form', collection: @collection  %>
+        <div class="button-container">
+          <%= link_to "Delete this collection", collection_path, method: :delete, class:"button" %>
+         </div>
       </div>
     </div>
   </div>
