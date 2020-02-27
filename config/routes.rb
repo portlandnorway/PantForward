@@ -2,17 +2,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root :to => "collections#index"
+    root to: "collections#index"
   end
-  root :to => redirect("/users/sign_in")
+  root to: redirect("/users/sign_in")
 
-  resources :collections,  only: %i[show new create] do
+  resources :collections do
     resources :bookings, only: [:create]
   end
-
-  resources :users, only: [:show], as: :dashboard
   resources :bookings, only: :show
-  get '/map', to: 'collections#map', as: :map
+
+  get :dashboard, to: 'users#dashboard'
+  get :map, to: 'collections#map'
+
   post '/bookings/:id/confirmed', to: 'bookings#confirmed', as: :confirmed
   post '/bookings/:id', to: 'bookings#picked_up', as: :picked_up
 end
