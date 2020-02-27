@@ -1,0 +1,28 @@
+<%#= raise %>
+<div class="col-sm-12 col-md-6 col-lg-4">
+  <div class="card-collect card-trigger" id="btn-<%= element.id %>" data-modal="myModal_<%= element.id %>">
+    <div>
+      <% if element.user.avatar.attached? %>
+        <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+      <% else %>
+        <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
+      <% end %>
+    </div>
+    <div>
+      <div class="card-collect-infos">
+        <h3><%= "#{element.user.first_name}"%></h3>
+        <p><%= element.big_bottles + element.small_bottles %> bottles</p>
+        <p><%= element.tip %> kr tip</p>
+        <% if element.bookings.empty? %>
+          <p>Waiting for booking<p>
+        <% elsif element.bookings.first.booked? %>
+          <p>Awaiting pickup from <%= element.bookings.first.user.first_name %>
+        <% elsif element.bookings.first.picked_up? %>
+          <div class="button-container">
+            <%= link_to "Confirm pick-up", confirmed_path(element.bookings.first), method: :post, class:"button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
