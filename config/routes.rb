@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show], as: :dashboard
   resources :bookings, only: :show
   get '/map', to: 'collections#map', as: :map
+  post '/bookings/:id/confirmed', to: 'bookings#confirmed', as: :confirmed
   post '/bookings/:id', to: 'bookings#picked_up', as: :picked_up
 end

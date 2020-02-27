@@ -1,21 +1,34 @@
 class BookingsController < ApplicationController
+  before_action :find_booking, except: :create
+
   def create
-    @booking = Booking.new
-    @booking.user = current_user
-    @booking.collection_id = params[:collection_id]
+    @booking = current_user.bookings.new(collection_id: params[:collection_id])
     @booking.save
     redirect_to booking_path(@booking)
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def picked_up
-    @booking = Booking.find(params[:id])
-    @booking.status = 1
-    @booking.save!
-    redirect_to dashboard_path
+    @booking.picked_up!
+    @booking.save
+    dashboard
   end
 
+  def confirmed
+    @booking.confirmed!
+    @booking.save
+    dashboard
+  end
+
+  private
+
+  def find_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def dashboard
+    redirect_to dashboard_path
+  end
 end

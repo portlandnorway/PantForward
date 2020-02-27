@@ -27,8 +27,10 @@
 <div class="container">
   <div class="row">
     <% @collections.each do |collection| %>
-      <%= render "shared/card", element: collection %>
-      <%= render "shared/modal", element: collection %>
+      <% if collection.bookings.empty? %>
+        <%= render "shared/card", element: collection %>
+        <%= render "shared/modal", element: collection %>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -21,13 +21,10 @@
     <p>Total: <strong><%= element.reward %></strong></p>
     <% if element.user != current_user %>
       <div class="button-container">
-          <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
-        </div>
-      <% else %>
-        <div class="container">
-          <h3>Awaiting booking</h3>
-        </div>
-      <% end %>
+        <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
+
