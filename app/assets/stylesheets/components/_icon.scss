@@ -46,11 +46,20 @@
   display: flex;
   justify-content: center;
   p {
-    margin: 10px;
+    margin: 24px 24px 0 24px;
+    font-color: $black;
   }
 }
 
 .close {
   margin-top: 10px;
   margin-right: 10px;
+}
+
+a.mapboxgl-ctrl-logo {
+  visibility: hidden;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  visibility: hidden;
 }
