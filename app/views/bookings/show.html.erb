@@ -1,43 +1,48 @@
-<div class="custom-container">
-  <div class="center-container">
-    <h3>Pickup confirmed</h3>
-  </div>
-    <div class="modal-card-content">
-      <div>
-        <% if @booking.collection.user.avatar.attached? %>
-          <%= cl_image_tag @booking.collection.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
-        <% else %>
-          <i class="fas fa-user-circle avatar-large"></i>
-        <% end %>
-      </div>
-      <div class="card-collect-info-custom">
-        <p>Donator: <%= @booking.collection.user.first_name %> <%= @booking.collection.user.last_name%></p>
-        <p>Phone: <%= @booking.collection.user.phone_number %></p>
-        <div class="two-icons-container">
-          <p><i class="fas fa-wine-bottle"></i> <%= @booking.collection.big_bottles + @booking.collection.small_bottles %></p>
-          <p><i class="fas fa-trophy"></i> <%= @booking.collection.tip %> kr</p>
+<div class="page-container">
+  <div class="custom-container">
+    <div class="center-container">
+      <h3>Pickup confirmed</h3>
+    </div>
+      <div class="modal-card-content">
+        <div>
+          <% if @booking.collection.user.avatar.attached? %>
+            <%= cl_image_tag @booking.collection.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+          <% else %>
+            <i class="fas fa-user-circle avatar-large"></i>
+          <% end %>
+        </div>
+        <div class="card-collect-info-custom">
+          <p>Donator: <%= @booking.collection.user.first_name %> <%= @booking.collection.user.last_name%></p>
+          <p>Phone: <%= @booking.collection.user.phone_number %></p>
+          <div class="two-icons-container">
+            <p><i class="fas fa-wine-bottle"></i> <%= @booking.collection.big_bottles + @booking.collection.small_bottles %></p>
+            <p><i class="fas fa-trophy"></i> <%= @booking.collection.tip %> kr</p>
+          </div>
         </div>
       </div>
+      <div class="button-container">
+      <% if @booking.status == 'booked' %>
+        <%= link_to "Mark as collected", booking_path(@booking), method: :post, class:"button" %>
+      <% elsif %>
+        "This collection is allready booked!"
+      <% end %>
     </div>
-    <div class="button-container">
-    <% if @booking.status == 'booked' %>
-      <%= link_to "Mark as collected", booking_path(@booking), method: :post, class:"button" %>
-    <% elsif %>
-      "This collection is allready booked!"
-    <% end %>
+      <p>Note from <%= @booking.collection.user.first_name %>:
+        <% if @booking.collection.details == "" %>
+        <br>No notes for you
+        <% else %>
+        <br><i>"<%= @booking.collection.details %>"</i>
+        <% end %>
+        </p>
+      <p>Address: <%= link_to @booking.collection.address, "https://www.google.no/maps/place/#{@booking.collection.address}" %> <i class="fas fa-external-link-alt"></i></p>
   </div>
-    <p>Note from <%= @booking.collection.user.first_name %>: <br /><i>"<%= @booking.collection.details %>"</i></p>
-    <p>Address: <%= link_to @booking.collection.address, "https://www.google.no/maps/place/#{@booking.collection.address}" %> <i class="fas fa-external-link-alt"></i></p>
+  <div>
+    <div
+        id="map"
+        style="width: 100%;
+        height: 35vh; position: fixed; bottom: 65px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>
-<div>
-  <div
-      id="map"
-      style="width: 100%;
-      display: table-row;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-</div>
-
-
-
