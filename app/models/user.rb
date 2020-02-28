@@ -12,6 +12,4 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  validate :validate_images
-
 end
