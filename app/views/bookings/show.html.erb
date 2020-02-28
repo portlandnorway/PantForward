@@ -24,7 +24,7 @@
       <% if @booking.status == 'booked' %>
         <%= link_to "Mark as collected", booking_path(@booking), method: :post, class:"button" %>
       <% elsif %>
-        "This collection is allready booked!"
+        "This collection is already booked!"
       <% end %>
     </div>
       <p>Note from <%= @booking.collection.user.first_name %>:

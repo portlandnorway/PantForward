@@ -27,7 +27,6 @@ class BookingsController < ApplicationController
   def confirmed
     @booking.confirmed!
     @booking.save
-    dashboard
   end
 
   private
