@@ -32,7 +32,7 @@ class CollectionsController < ApplicationController
         lat: collection.latitude,
         lng: collection.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { collection: collection }),
-        image_url: helpers.asset_url('bottle')
+        image_url: helpers.asset_url('cropped-logo-black')
       }
     end
   end
