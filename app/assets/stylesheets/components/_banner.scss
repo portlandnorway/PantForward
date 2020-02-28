@@ -4,6 +4,7 @@
   padding: 100px 0;
   height: calc(100vh - #{$navbar-height});
   position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('background.jpeg');
 }
 
 .banner h1 {
