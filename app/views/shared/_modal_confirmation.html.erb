@@ -29,12 +29,16 @@
 
     <% else %>
       <div class="card-collect-infos">
-        <h3>Thanks for confirming! Ready for your next donation?</h3>
+        <h3>Thanks for confirming!</h3>
+        <h3>Ready for your next donation?</h3>
         <p>Picked up by: <%= booking.user.first_name %></p>
         <div class="two-icons-container">
           <p><i class="fas fa-wine-bottle"></i> <%= booking.collection.big_bottles + booking.collection.small_bottles %></p>
           <p><i class="fas fa-trophy"></i> <%= booking.collection.reward  %> kr</p>
         </div>
+        <div class="button-container">
+        <%= link_to "Home", dashboard_path, class:"button" %>
+      </div>
       </div>
     <% end %>
 
