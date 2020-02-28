@@ -1,6 +1,5 @@
-<%#= raise %>
 <div class="col-sm-12 col-md-6 col-lg-4">
-  <div class="card-collect card-trigger" id="btn-<%= element.id %>" data-modal="myModal_<%= element.id %>">
+  <div class="card-collect" id="btn-<%= element.id %>" data-modal='dennis_modal'>
     <div>
       <% if element.user.avatar.attached? %>
         <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
@@ -16,16 +15,19 @@
         <% if element.bookings.empty? %>
           <p>Waiting for booking<p>
           <div class="button-container">
-            <%= link_to "Edit this donation", edit_collection_path(element), class:"button"%>
+            <%= link_to "Edit this donation", edit_collection_path(element), class: "button"%>
           </div>
-        <% elsif element.bookings.first.booked? %>
+        <% elsif element.bookings.last.booked? %>
           <p>Awaiting pickup from <%= element.bookings.first.user.first_name %>
-        <% elsif element.bookings.first.picked_up? %>
-          <div class="button-container">
-            <%= link_to "Confirm pick-up", confirmed_path(element.bookings.first), method: :post, class:"button" %>
+        <% elsif element.bookings.last.picked_up? %>
+          <div class="button-container" id="confirm">
+            <%= link_to "Confirm pick-up", confirmed_path(element.bookings.last), method: :post, class:"button" %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<% if element.bookings.any? %>
+  <%= render "shared/modal_confirmation", booking: element.bookings.last %>
+<% end %>
