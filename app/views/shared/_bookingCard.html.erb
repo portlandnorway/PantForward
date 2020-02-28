@@ -1,9 +1,9 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
-  <%= link_to booking_path(element), {class:"card-collect"} do %>
-    <% if element.user.avatar.attached? %>
-      <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+  <%= link_to booking_path(element), {class:"card-collect text-decoration-none"} do %>
+    <% if element.collection.user.avatar.attached? %>
+      <%= cl_image_tag element.collection.user.avatar.key, class:"avatar-small", alt:"avatar-large" %>
     <% else %>
-      <i class="fas fa-user-circle avatar-large"></i>
+      <i class="fas fa-user-circle avatar-small"></i>
     <% end %>
 
     <div class="card-collect-infos">

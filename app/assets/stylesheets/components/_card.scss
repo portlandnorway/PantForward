@@ -32,7 +32,12 @@
 
 .card-collect-infos {
   padding: 10px;
-  min-width: 255px
+  min-width: 255px;
+  text-decoration: none;
+  color: $black;
+  h4:active {
+    text-decoration: none;
+  }
 }
 
 .card-collect-infos a {
