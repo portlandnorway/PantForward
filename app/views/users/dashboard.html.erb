@@ -69,12 +69,14 @@
     <p>You have have saved the mothereffing earth fact here" </p>
     <p>Confirmed:</p>
   </div>
+
   <div class="row" id='confirmed'>
      <% current_user.bookings.each do |booking| %>
       <% if booking.confirmed? %>
         <%= render "shared/bookingCard", element: booking %>
       <% end %>
     <% end %>
+
     <% current_user.collections.each do |donation| %>
       <% if !donation.bookings.empty? && donation.bookings.last.confirmed? %>
         <%= render "shared/card", element: donation %>
