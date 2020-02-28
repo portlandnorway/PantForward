@@ -1,5 +1,12 @@
 .custom-container {
-  margin: 10px;
+  margin: 24px;
+}
+
+.center-container {
   display: flex;
   justify-content: center;
+  margin: 0px;
+  p {
+    margin: 0;
+  }
 }
