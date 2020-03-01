@@ -10,8 +10,6 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <p class="notice popup-position"><%= notice %></p>
-    <p class="alert popup-position"><%= alert %></p>
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6 offset-md-3">
@@ -22,6 +20,7 @@
         </div>
       </div>
     </div>
+    <%= render 'shared/flashes' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

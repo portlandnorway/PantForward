@@ -21,14 +21,14 @@
                 input_html: { autocomplete: "phone-number" },
                 placeholder: "Phone number",
                 label: false %>
-    <div class=”avatar-field”>
-      <%= f.label "Avatar" %><br>
-      <%#= f.file_field :avatar,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "" }%>
+    <div class="button-container">
+      <span class="button btn-file">
+      Choose avatar
+      <%= f.file_field :avatar,
+                  required: false,
+                  autofocus: true %>
+      </span>
     </div>
-    <br><br>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -37,7 +37,6 @@
                 label: false %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password",
                 placeholder: "Password" },
                 label: false %>
@@ -45,7 +44,8 @@
                 required: true,
                 input_html: { autocomplete: "new-password" },
                 placeholder: "Comfirm password",
-                label: false %>
+                label: false,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
   </div>
 
   <div class="form-actions">
