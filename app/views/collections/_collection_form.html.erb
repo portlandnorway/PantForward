@@ -1,10 +1,10 @@
 <%= simple_form_for @collection do |f| %>
   <%= f.input :address, label: false, placeholder: "Address", input_html: { id:"collection_address"} %>
-  <%= f.input :neighborhood, label: false, collection: Collection::NEIGHBORHOODS,placeholder: "Select neighborhood" %>
+  <%= f.input :neighborhood, label: false, prompt: "Select neighborhood", collection: Collection::NEIGHBORHOODS, item_label_class: 'dropdown-item' %>
   <%= f.input :tip, label: false, placeholder: "Tip" %>
   <%= f.input :big_bottles, label: false, placeholder: "# of big bottles" %>
   <%= f.input :small_bottles, label: false, placeholder: "# of small bottles" %>
-  <%= f.input :details, label: false, placeholder: "Details" %>
+  <%= f.input :details, as: :text, label: false, placeholder: "Describe how to find your pant" %>
   <div class="button-container">
     <%= f.button :submit, class: "button" %>
   </div>
