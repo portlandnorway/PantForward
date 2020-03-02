@@ -47,4 +47,6 @@ const initMapbox = () => {
   }
 };
 
+/*Building map for the show page*/
+
 export { initMapbox };
