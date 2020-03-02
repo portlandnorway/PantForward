@@ -1,4 +1,12 @@
-.glide__slide {
-  height: 200px;
-  background-color: $red;
+.glide {
+  height: 100vh;
+  background-color: $light-green;
+  display: flex;
+}
+
+.glide__track {
+  height: 100vh;
+}
+
+.glide__slides {
 }
