@@ -62,7 +62,7 @@ DETAILS = ["I've left the bottles just outside the front gate. Cheers!", "Thanks
 
 SMALL_BOTTLES = [10, 15, 20, 25, 5, 5, 5, 30, 50, 100, 10, 10, 10, 20, 20, 25, 10, 10, 5, 5, 20]
 BIG_BOTTLES = [0, 0, 0, 0, 5, 5, 5, 2, 2, 3, 3, 1, 10, 20, 25, 5, 5, 0, 3, 1, 2]
-TIP = [0, 10, 20, 25, 0, 10, 20, 10, 20, 30, 40, 50, 100]
+TIP = [50, 100, 50, 100, 20, 100, 100, 100, 200]
 puts 'Creating 9 fake collections...'
 
 users = User.all.to_a
