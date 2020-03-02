@@ -48,16 +48,22 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user = current_user
     @collection.reward = reward_calculation(@collection)
-    @collection.save!
-    redirect_to dashboard_path
+    if @collection.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @collection.update(collection_params)
-    redirect_to dashboard_path
+    if @collection.update(collection_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
   def destroy

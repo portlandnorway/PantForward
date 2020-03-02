@@ -6,6 +6,8 @@ class Collection < ApplicationRecord
 
   validates :address, :small_bottles, :big_bottles, presence: true
   validates :neighborhood, presence: true, inclusion: NEIGHBORHOODS
+  validates :details, length: { maximum: 140,
+    too_long: "%{count} characters is the maximum allowed" }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
