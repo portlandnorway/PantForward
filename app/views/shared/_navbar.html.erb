@@ -3,16 +3,32 @@
 
 <nav class="custom-navbar">
 
-  <%= link_to root_path, class: "navbar-icons" do %>
+ <% if current_page?(root_path) %>
+    <%= link_to root_path, class: "navbar-icons-active" do %>
       <i class="fas fa-list-ul"></i>
     <% end %>
+      <% else %>
+<%= link_to root_path, class: "navbar-icons" do %>
+      <i class="fas fa-list-ul"></i>
+    <% end %>
+  <% end %>
 
-  <%= link_to new_collection_path, class: "navbar-icons round-button" do %>
+  <% if current_page?(new_collection_path) %>
+    <%= link_to new_collection_path, class: "navbar-icons-active round-button-active" do %>
       <i class="fas fa-plus"></i>
     <% end %>
+      <% else %>
+<%= link_to new_collection_path, class: "navbar-icons round-button" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  <% end %>
 
-
-  <%= link_to dashboard_path, class: "navbar-icons" do %>
+<% if current_page?(dashboard_path) %>
+    <%= link_to dashboard_path, class: "navbar-icons-active" do %>
       <i class="fas fa-user-circle"></i>
     <% end %>
-</nav>
+      <% else %>
+<%= link_to dashboard_path, class: "navbar-icons" do %>
+      <i class="fas fa-user-circle"></i>
+    <% end %>
+  <% end %>
