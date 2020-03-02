@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_133429) do
 
   create_table "collections", force: :cascade do |t|
     t.string "address"
-    t.integer "tip"
+    t.integer "tip", default: 0
     t.string "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
