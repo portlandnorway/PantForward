@@ -1,0 +1,58 @@
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Your pending collections <i class="fas fa-plus-circle"></i>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                  <div class="header-wrapper">
+                    <% if current_user.bookings.booked.any? %>
+                    <% else %>
+                      <p> Nothing booked. Head to the map to get another!</p>
+                    <% end %>
+                  </div>
+                <div class="container" id='booked'>
+                  <div class="row">
+                   <% current_user.bookings.each do |booking| %>
+                      <% if booking.status == 'booked' %>
+                        <%= render "shared/bookingCard", element: booking %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Waiting for confirmation <i class="fas fa-plus-circle"></i>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+
+          <!-- Collections that the user has BOOKED & PICKED UP, but not are not confirmed by Donator. -->
+                  <div class="header-wrapper">
+                    <% if current_user.bookings.picked_up.any? %>
+                      <p>Great job! The donator has been notified, and will confirm soon.</p>
+                    <% else %>
+                      <p> No collection is listed as collected </p>
+                    <% end %>
+                  </div>
+                  <div class="row" id='picked_up'>
+                     <% current_user.bookings.each do |booking| %>
+                      <% if booking.picked_up? %>
+                        <%= render "shared/bookingCard", element: booking %>
+                      <% end %>
+                    <% end %>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>

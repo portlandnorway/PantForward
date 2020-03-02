@@ -1,0 +1,14 @@
+<div class="header-wrapper">
+  <h3>Your current donations:</h3>
+</div>
+<div class="container">
+  <div class="row" id='donations'>
+    <% current_user.collections.each do |donation| %>
+      <% if donation.bookings.empty? || !donation.bookings.last.confirmed? %>
+        <%= render "shared/card_donator", element: donation %>
+        <% else %>
+          <p> You have no donations out!</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
