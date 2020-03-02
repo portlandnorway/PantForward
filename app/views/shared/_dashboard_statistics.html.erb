@@ -1,15 +1,27 @@
+<% case @stats.bottles_picked_up %>
+  <% when 0 %>
+    <% text = "If you pant one bottle, you save enough energy to fully charge your mobile 70 times" %>
+  <% when 1..10 %>
+    <% text = "Great job!" %>
+  <% when 11..20 %>
+    <% text = "Ok" %>
+<% end %>
 
 <div class="text-center">
-
-  <h3>Your statistics</h3>
-  <%= render 'shared/progression_bar' %>
-  <p>BASED ON THE BAR, YOU HAVE SAVED SO MUCH LIVES AND TREES AND HOT MOMS</p>
-<!-- Here we want a cool bar -->
   <h5>Total bottles saved</h5>
   <p><%= @stats.bottles_picked_up + @stats.bottles_donated %> bottles</p>
-</div>
+  <div class="dashboard-container">
+    <%= text %>
+  </div>
 
-<p>Money earned: <%= @stats.money_earned %> kr</p>
-<p>Charity provided: <%= @stats.money_donated %> kr
-<p>Collections: <%= @stats.pick_ups %></p>
-<p>Donations: <%= @stats.donations %></p>
+  <div class="d-flex justify-content-around">
+    <div>
+      <p>Money earned: <%= @stats.money_earned %> kr</p>
+      <p>Charity provided: <%= @stats.money_donated %> kr</p>
+    </div>
+    <div>
+      <p>Collections: <%= @stats.pick_ups %></p>
+      <p>Donations: <%= @stats.donations %></p>
+    </div>
+  </div>
+</div>
