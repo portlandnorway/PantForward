@@ -47,7 +47,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     @collection.user = current_user
-    @collection.reward = reward_calculation(@collection)
+    @collection.reward = @collection.reward_calculation_collection
     if @collection.save
       redirect_to dashboard_path
     else
@@ -72,10 +72,6 @@ class CollectionsController < ApplicationController
   end
 
   private
-
-  def reward_calculation(collection)
-    (collection.big_bottles * 3) + (collection.small_bottles * 2) + collection.tip
-  end
 
   def find_collection
     @collection = Collection.find(params[:id])
