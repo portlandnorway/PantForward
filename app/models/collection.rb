@@ -12,4 +12,8 @@ class Collection < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  def reward_calculation_collection
+    (big_bottles * 3) + (small_bottles * 2) + tip
+  end
+
 end

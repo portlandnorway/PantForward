@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get :dashboard, to: 'users#dashboard'
   get :map, to: 'collections#map'
+  get :learn, to: 'users#learn'
 
   post '/bookings/:id/confirmed', to: 'bookings#confirmed', as: :confirmed
   post '/bookings/:id', to: 'bookings#picked_up', as: :picked_up
