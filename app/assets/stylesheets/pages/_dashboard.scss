@@ -1,9 +1,21 @@
 .dashboard-user {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
+  p {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
 }
 
 .dashboard-container {
   margin: 1em;
+}
+
+.nav-item {
+  border-radius: 12px 12px 0 0;
+}
+
+.card-header {
+  padding: 0.2rem 0.25rem;
 }
