@@ -8,6 +8,9 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "noty/src/noty";
+@import "noty/src/themes/nest";
+@import "noty/src/themes/metroui";
 
 // Your CSS partials
 @import "components/index";

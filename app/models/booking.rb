@@ -21,6 +21,5 @@ class Booking < ApplicationRecord
   def reward_calculation_booking
     (collection.big_bottles * 3) + (collection.small_bottles * 2) + collection.tip
   end
-
 end
 
