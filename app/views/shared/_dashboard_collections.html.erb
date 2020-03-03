@@ -1,12 +1,13 @@
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Your pending collections <i class="fas fa-chevron-down"></i>
+              <button class="btn btn-link collapsable collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <i class="fas fa-chevron-down"></i>
+                Your pending collections
               </button>
             </h5>
           </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                   <div class="header-wrapper">
                     <% if current_user.bookings.booked.any? %>
@@ -28,8 +29,9 @@
             <div class="card">
               <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Waiting for confirmation <i class="fas fa-chevron-down"></i>
+                  <button class="btn btn-link collapsable collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-chevron-down"></i>
+                    Waiting for confirmation
                   </button>
                 </h5>
               </div>
