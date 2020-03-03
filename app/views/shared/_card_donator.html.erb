@@ -19,14 +19,12 @@
         <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
         <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
       </div>
+        <% if element.bookings.any? && element.bookings.last.booked? %>
+          <p>Awaiting pickup from <%= element.bookings.first.user.first_name %></p>
 
-      <% if element.bookings.any? && element.bookings.last.booked? %>
-        <p>Awaiting pickup from <%= element.bookings.first.user.first_name %></p>
-
-      <% elsif element.bookings.any? && element.bookings.last.picked_up? %>
+        <% elsif element.bookings.any? && element.bookings.last.picked_up? %>
           <%= link_to "Confirm pick-up", confirmed_path(element.bookings.last), method: :post, class:"button" %>
-      <% end %>
-
+        <% end %>
     </div>
   </div>
 </div>

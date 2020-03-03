@@ -11,17 +11,13 @@ const drawCharts = () => {
     new Chart(div,{
       "type":"doughnut",
       "data":{
-        "labels":[
-          "Average",
-          "You"
-        ],
         "datasets":[
           {
             "label":"My First Dataset",
             "data":[avgValue, userValue],
             "backgroundColor":[
-              "#00ADB5",
-              "#393E46"
+              "#393E46",
+              "#5eb50f"
             ]
           }
         ]
