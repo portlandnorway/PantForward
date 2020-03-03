@@ -1,5 +1,5 @@
 .button {
-  background-color: white;
+  background-color: $light-green;
   border: none;
   padding: 8px 20px;
   text-align: center;
@@ -7,7 +7,7 @@
   border-radius: 10px;
   transition-duration: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  color: $light-green;
+  color: white;
   min-width: 125px;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .button-small {
-  background-color: white;
+  background-color: $light-green;
   border: none;
   padding: 8px 10px;
   text-align: center;
