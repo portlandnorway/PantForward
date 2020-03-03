@@ -6,6 +6,10 @@
     margin-top: 8px;
     margin-bottom: 0;
   }
+  i {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
 }
 
 .dashboard-container {
@@ -18,4 +22,8 @@
 
 .card-header {
   padding: 0.2rem 0.25rem;
+}
+
+.dashboard-numbers h1 {
+  margin: 20px;
 }

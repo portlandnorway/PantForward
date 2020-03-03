@@ -8,6 +8,7 @@ import { initAutocomplete }   from '../plugins/init_autocomplete';
 import { initScroll }         from '../plugins/init_scroll_btn';
 import { initConfirmModals }  from '../plugins/init_confirm_modal';
 import { initGlide }          from '../plugins/init_slider';
+import { drawCharts }         from '../plugins/init_charts';
 
 window.showNotification = (link, options = {}) => {
   const defaultOptions = {
@@ -29,4 +30,5 @@ initModals();
 initAutocomplete();
 initScroll();
 initConfirmModals();
-initGlide();
+//initGlide();
+drawCharts();

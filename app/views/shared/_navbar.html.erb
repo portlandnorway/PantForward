@@ -2,18 +2,14 @@
 </div>
 
 <nav class="custom-navbar">
-  <% if current_page?(root_path) %>
-    <%= link_to root_path, class: "navbar-icons-active" do %>
-      <i class="fas fa-list-ul"></i>
-    <% end %>
-  <% else %>
-    <%= link_to root_path, class: "navbar-icons" do %>
-      <i class="fas fa-list-ul"></i>
-    <% end %>
+ <% if current_page?(root_path) %>
+    <%= link_to image_tag('index-green.png'), root_path, class: "navbar-icons-modified" %>
+      <% else %>
+    <%= link_to image_tag('index-white.png'), root_path, class: "navbar-icons-modified" %>
   <% end %>
 
   <% if current_page?(new_collection_path) %>
-    <%= link_to new_collection_path, class: "navbar-icons-active round-button-active" do %>
+    <%= link_to new_collection_path, class: "navbar-icons round-button-active" do %>
       <i class="fas fa-plus"></i>
     <% end %>
   <% else %>
@@ -22,13 +18,9 @@
     <% end %>
   <% end %>
 
-  <% if current_page?(dashboard_path) %>
-    <%= link_to dashboard_path, class: "navbar-icons-active" do %>
-      <i class="fas fa-user-circle"></i>
-    <% end %>
-  <% else %>
-    <%= link_to dashboard_path, class: "navbar-icons" do %>
-      <i class="fas fa-user-circle"></i>
-    <% end %>
-  <% end %>
+<% if current_page?(dashboard_path) %>
+  <%= link_to image_tag('profile-green.png'), dashboard_path, class: "navbar-icons-modified" %>
+<% else %>
+  <%= link_to image_tag('profile-white.png'), dashboard_path, class: "navbar-icons-modified" %>
+<% end %>
 </nav>

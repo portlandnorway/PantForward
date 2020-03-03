@@ -1,32 +1,30 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
   <div class="card-collect" data-modal='dennis_modal'>
     <% if element.user.avatar.attached? %>
-      <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+      <%= cl_image_tag element.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
     <% else %>
       <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
     <% end %>
 
     <div class="card-collect-infos">
+      <div class="d-flex justify-content-between">
       <h4>Reward: <%= element.reward %>kr</h4>
-      <p>Donated by: <%= element.user.first_name %> <%= element.user.last_name %></p>
+      <% if element.bookings.empty? %>
+        <%= link_to edit_collection_path(element) do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+      <% end %>
+      </div>
       <div class="two-icons-container">
         <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
         <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
       </div>
+        <% if element.bookings.any? && element.bookings.last.booked? %>
+          <p>Awaiting pickup from <%= element.bookings.first.user.first_name %></p>
 
-      <% if element.bookings.empty? %>
-        <p>Waiting for booking</p>
-          <%= link_to "Edit this donation", edit_collection_path(element) %>
-
-
-      <% elsif element.bookings.last.booked? %>
-        <p>Awaiting pickup from <%= element.bookings.first.user.first_name %></p>
-
-      <% elsif element.bookings.last.picked_up? %>
-        <div class="button-container" id="confirm">
+        <% elsif element.bookings.any? && element.bookings.last.picked_up? %>
           <%= link_to "Confirm pick-up", confirmed_path(element.bookings.last), method: :post, class:"button" %>
-        </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>

@@ -1,27 +1,58 @@
-<% case @stats.bottles_picked_up %>
-  <% when 0 %>
-    <% text = "If you pant one bottle, you save enough energy to fully charge your mobile 70 times" %>
-  <% when 1..10 %>
-    <% text = "Great job!" %>
-  <% when 11..20 %>
-    <% text = "Ok" %>
-<% end %>
+<script>
+  window.userStats = <%=raw @stats.to_json %>;
+</script>
 
 <div class="text-center">
-  <h5>Total bottles saved</h5>
-  <p><%= @stats.bottles_picked_up + @stats.bottles_donated %> bottles</p>
-  <div class="dashboard-container">
-    <%= text %>
+  <div class="dashboard-numbers">
+    <h5>Bottles saved:</h5>
+    <h1><%= @stats[:bottles_picked_up] + @stats[:bottles_donated] %> bottles</h1>
+  </div>
+<div class="motivation-container">
+  <% case @stats[:bottles_picked_up] + @stats[:bottles_donated] %>
+  <% when 0 %>
+    Come on! Get out there and save your first bottle.
+  <% when 1..10 %>
+    Great job! If you pant one bottle, you save enough energy to fully charge your mobile 70 times
+  <% when 11..20 %>
+    You rock! This will save a lot of whales.
+  <% end %>
+</div>
+
+<div class="text-center">
+  <p>Your stats compared to the avarage user</p>
+</div>
+
+  <div class="d-flex justify-content-around dashboard-numbers-two">
+    <div class="dashboard-stats">
+      <p>Money earned</p>
+      <canvas id="moneyEarnedChart"></canvas>
+    </div>
+    <div class="dashboard-stats">
+      <p>Charity provided (kr)</p>
+      <canvas id="charityProvidedChart"></canvas>
+      <p><%#= @stats.money_donated %></p>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-around">
-    <div>
-      <p>Money earned: <%= @stats.money_earned %> kr</p>
-      <p>Charity provided: <%= @stats.money_donated %> kr</p>
+  <div class="d-flex justify-content-around dashboard-numbers-two">
+    <div class="dashboard-stats">
+      <p>Collections</p>
+      <canvas id="collectionChart"></canvas>
+      <p><%#= @stats.pick_ups %></p>
     </div>
-    <div>
-      <p>Collections: <%= @stats.pick_ups %></p>
-      <p>Donations: <%= @stats.donations %></p>
+    <div class="dashboard-stats">
+      <p>Donations</p>
+      <canvas id="donationChart"></canvas>
+      <p><%#= @stats.donations %></p>
     </div>
   </div>
+</div>
+
+<div class="chart-label">
+  <p>You</p>
+  <div class="chart-styling"> </div>
+</div>
+<div class="chart-label">
+  <p>Average</p>
+  <div class="chart-styling-two"> </div>
 </div>

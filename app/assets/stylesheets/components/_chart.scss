@@ -1,0 +1,44 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  p {
+    margin: 0;
+  }
+}
+
+.motivation-container {
+  margin: 2em 1em;
+}
+
+.dashboard-stats {
+  min-width: 190px;
+  min-height: 170px;
+  background-color: white;
+  margin: 5px;
+  padding-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  p {
+    margin-bottom: 0 !important;
+    padding-top: 10px;
+  }
+}
+
+.chart-label {
+  max-height: 40px !important;
+}
+
+.chart-styling {
+  background: #5eb50f;
+  padding: 6px;
+  width: 30px;
+  border-radius: 10px;
+}
+
+.chart-styling-two {
+  background: $brown;
+  padding: 6px;
+  width: 30px;
+  border-radius: 10px;
+}
