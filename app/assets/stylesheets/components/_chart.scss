@@ -16,11 +16,11 @@
   min-height: 170px;
   background-color: white;
   margin: 5px;
+  padding-top: 15px;
   border-radius: 12px;
-  padding: 1em;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-#charityProvidedChart {
-
+  p {
+    margin-bottom: 0 !important;
+    padding-top: 10px;
+  }
 }

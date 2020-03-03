@@ -7,12 +7,11 @@ $navbar-height: 65px;
   background-color: white;
   padding-left: 50px;
   padding-right: 50px;
-  text-align: center;
   height: $navbar-height;
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 2px solid #00ADB5;
+  border-top: 1px solid #cdcdcd;
 }
 
 .navbar-icons {
@@ -28,21 +27,8 @@ $navbar-height: 65px;
   }
 }
 
-.navbar-icons:hover {
-  text-decoration: none;
-}
-
-.navbar-icons-active {
-  float: left;
-  display: block;
-  color: $brown;
-  text-align: center;
-  padding: 12px 12px;
-  text-decoration: none;
-  font-size: 28px;
-  .fa-user-circle {
-    font-size: 34px;
-  }
+.navbar-icons-modified img {
+  width: 2.7em;
 }
 
 .navbar-placeholder {
@@ -54,6 +40,7 @@ $navbar-height: 65px;
 .round-button {
   background-color: white;
   border: 2px solid $light-green;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   color: $light-green;
   border-radius: 50%;
   position: relative;
@@ -67,13 +54,22 @@ $navbar-height: 65px;
     width: 28px;
     height: 28px;
     display: contents;
+    text-decoration: none;
+  }
+   a {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    color: $light-green;
   }
 }
 
 .round-button-active {
-  background-color: white;
-  border: 2px solid $brown;
-  color: $brown;
+  background-color: $light-green;
+  border: 2px solid $light-green;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: white;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -86,13 +82,16 @@ $navbar-height: 65px;
     width: 28px;
     height: 28px;
     display: contents;
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    color: white;
   }
 }
-
-.round-button-active:hover {
-  text-decoration: none;
-}
-
 
 .nav-pills .nav-link {
   border-radius: 10px 10px 0 0;
