@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
       [{
         lat: @booking.collection.latitude,
         lng: @booking.collection.longitude,
-        infoWindow: render_to_string(partial: "collections/info_window", locals: { collection: @booking.collection }),
         image_url: helpers.asset_url('cropped-logo-black')
       }]
   end

@@ -12,25 +12,34 @@
   <% when 0 %>
     Come on! Get out there and save your first bottle.
   <% when 1..10 %>
-    Great job! If you pant one bottle, you save enough energy to fully charge your mobile 70 times
+    Great job! If you pant just one bottle, you save enough energy to fully charge your mobile 70 times
   <% when 11..20 %>
     You rock! This will save a lot of whales.
+  <% when 21..30 %>
+    Yearly, the average Norwegian throws away 30 bottles in nature. Good job saving them!
+  <% when 31..50 %>
+    You´re on a strike! Continue that awesome job.
+  <% when 51..100 %>
+    <%= @stats[:bottles_picked_up] + @stats[:bottles_donated] %> bottles saved! Thats insane.
+  <% when 101..200 %>
+    Mother earth is thanking you! Keep it up, and karma will pay you forever.
   <% end %>
 </div>
 
 <div class="text-center">
-  <p>Your stats compared to the avarage user</p>
+  <p>Your stats compared to the avarage user this month</p>
 </div>
 
   <div class="d-flex justify-content-around dashboard-numbers-two">
     <div class="dashboard-stats">
       <p>Money earned</p>
       <canvas id="moneyEarnedChart"></canvas>
+      <p> <%= @stats[:money_earned] %>kr</p>
     </div>
     <div class="dashboard-stats">
       <p>Charity provided (kr)</p>
       <canvas id="charityProvidedChart"></canvas>
-      <p><%#= @stats.money_donated %></p>
+      <p> <%= @stats[:money_donated] %>kr</p>
     </div>
   </div>
 
@@ -38,21 +47,21 @@
     <div class="dashboard-stats">
       <p>Collections</p>
       <canvas id="collectionChart"></canvas>
-      <p><%#= @stats.pick_ups %></p>
+      <p> <%= @stats[:pick_ups] %> times</p>
     </div>
     <div class="dashboard-stats">
       <p>Donations</p>
       <canvas id="donationChart"></canvas>
-      <p><%#= @stats.donations %></p>
+      <p> <%= @stats[:donations] %> times</p>
     </div>
   </div>
 </div>
 
-<div class="chart-label">
-  <p>You</p>
-  <div class="chart-styling"> </div>
+<div class="chart-label d-flex align-items-center">
+  <span class="dot-two"></span>
+  You
 </div>
-<div class="chart-label">
-  <p>Average</p>
-  <div class="chart-styling-two"> </div>
+<div class="chart-label d-flex align-items-center">
+  <span class="dot"></span>
+  Average
 </div>

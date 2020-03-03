@@ -1,21 +1,16 @@
-<div class="modal-content">
-  <div class="modal-card-content">
-    <div>
-      <% if collection.user.avatar.attached? %>
-        <%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
-      <% else %>
-        <i class="fas fa-user-circle avatar-large"></i>
-      <% end %>
-    </div>
-  </div>
-  <div class="card-collect-infos">
-    <h3><%= collection.user.first_name %></h3>
-    <p>Collect <%= collection.tip %>kr</p>
-    <div class="button-container">
-      <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
-    </div>
+<div class="modal-card-content">
+  <div>
+    <% if collection.user.avatar.attached? %>
+      <%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
+    <% else %>
+      <i class="fas fa-user-circle avatar-large"></i>
+    <% end %>
   </div>
 </div>
-
-
-
+<div class="card-collect-infos">
+  <h3><%= collection.user.first_name %></h3>
+  <p>Collect <%= collection.tip %>kr</p>
+  <div class="button-container">
+    <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
+  </div>
+</div>
