@@ -10,34 +10,39 @@
 <div class="motivation-container">
   <% case @stats[:bottles_picked_up] %>
   <% when 0 %>
-    If you pant one bottle, you save enough energy to fully charge your mobile 70 times
+    Come on! Get out there and save your first bottle.
   <% when 1..10 %>
-    Great job!
+    Great job! If you pant one bottle, you save enough energy to fully charge your mobile 70 times
   <% when 11..20 %>
-    Ok
+    You rock! This will save a lot of whales.
   <% end %>
+</div>
+
+<div class="text-center">
+  <p>Your stats compared to the avarage user</p>
 </div>
 
   <div class="d-flex justify-content-around dashboard-numbers-two">
     <div class="dashboard-stats">
       <p>Money earned</p>
-      <canvas id="moneyEarnedChart" width="200" height="200"></canvas>
+      <canvas id="moneyEarnedChart"></canvas>
     </div>
     <div class="dashboard-stats">
-      <p>Charity provided:</p>
-      <canvas id="charityProvidedChart" width="200" height="200"></canvas>
-      <p><%#= @stats.money_donated %> kr</p>
+      <p>Charity provided (kr)</p>
+      <canvas id="charityProvidedChart"></canvas>
+      <p><%#= @stats.money_donated %></p>
     </div>
   </div>
+
   <div class="d-flex justify-content-around dashboard-numbers-two">
     <div class="dashboard-stats">
-      <p>Collections:</p>
-      <canvas id="collectionChart" width="200" height="200"></canvas>
+      <p>Collections</p>
+      <canvas id="collectionChart"></canvas>
       <p><%#= @stats.pick_ups %></p>
     </div>
     <div class="dashboard-stats">
-      <p>Donations:</p>
-      <canvas id="donationChart" width="200" height="200"></canvas>
+      <p>Donations</p>
+      <canvas id="donationChart"></canvas>
       <p><%#= @stats.donations %></p>
     </div>
   </div>
