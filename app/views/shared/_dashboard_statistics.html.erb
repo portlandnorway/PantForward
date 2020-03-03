@@ -4,11 +4,11 @@
 
 <div class="text-center">
   <div class="dashboard-numbers">
-    <h5>Total bottles saved</h5>
+    <h5>Bottles saved:</h5>
     <h1><%= @stats[:bottles_picked_up] + @stats[:bottles_donated] %> bottles</h1>
   </div>
 <div class="motivation-container">
-  <% case @stats[:bottles_picked_up] %>
+  <% case @stats[:bottles_picked_up] + @stats[:bottles_donated] %>
   <% when 0 %>
     Come on! Get out there and save your first bottle.
   <% when 1..10 %>
