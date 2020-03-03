@@ -36,7 +36,8 @@
 .two-icons-container {
   display: flex;
   justify-content: flex-start;
-  margin: 10px;
+  margin: 2px;
+  margin-bottom: 10px;
   p {
     margin-right: 2em;
   }
@@ -62,4 +63,17 @@ a.mapboxgl-ctrl-logo {
 
 .mapboxgl-ctrl-bottom-right {
   visibility: hidden;
+}
+
+.collapsable {
+  i.fas {
+    transition: all .3s;
+    transform: rotate(0deg);
+  }
+
+  &.collapsed {
+    i.fas {
+      transform: rotate(-90deg);
+    }
+  }
 }

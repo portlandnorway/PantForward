@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @pick_ups = current_user.bookings.confirmed
     # Booking.confirmed.all.where(user: @booking.user)
 
-    @stats = OpenStruct.new({
+    @stats = {
       # collection stats
       pick_ups: @pick_ups.count, # returns # of pick-ups completed
       bottles_picked_up: @pick_ups.sum(&:total_bottles), # returns # of bottles picked_up
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       donations: @history.count, # returns # of donations completed
       bottles_donated: @history.sum(&:total_bottles), # returns # of bottles donated
       money_donated: @history.sum(&:reward_calculation_booking)
-    })
+    }
 
   end
 
