@@ -25,10 +25,10 @@ const drawCharts = () => {
     });
   }
 
-  drawChart('moneyEarnedChart', window.userStats.money_earned, 200);
-  drawChart('charityProvidedChart', window.userStats.money_donated, 200);
-  drawChart('collectionChart', window.userStats.pick_ups, 200);
-  drawChart('donationChart', window.userStats.donations, 200);
+  drawChart('moneyEarnedChart', window.userStats.money_earned, 300);
+  drawChart('charityProvidedChart', window.userStats.money_donated, 250);
+  drawChart('collectionChart', window.userStats.pick_ups, 50);
+  drawChart('donationChart', window.userStats.donations, 10);
 }
 
 export { drawCharts };

@@ -11,7 +11,6 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 1.5em;
-  color: $light-green;
 }
 
 h3 {
@@ -20,9 +19,17 @@ h3 {
   color: $light-green;
 }
 
+h4 {
+  font-weight: regular;
+  font-size: 0.75em;
+  color: $black;
+}
+
+
 p {
   font-weight: light;
   font-size: 1em;
+  color: $black;
   opacity: .7;
   margin-bottom: 0.5rem;
 }

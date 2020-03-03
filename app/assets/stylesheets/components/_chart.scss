@@ -25,20 +25,24 @@
   }
 }
 
-.chart-label {
-  max-height: 40px !important;
+.chart-label {
+  margin: 0px;
 }
 
-.chart-styling {
-  background: #5eb50f;
-  padding: 6px;
-  width: 30px;
-  border-radius: 10px;
-}
-
-.chart-styling-two {
+.dot {
+  height: 20px;
+  width: 20px;
   background: $brown;
-  padding: 6px;
-  width: 30px;
-  border-radius: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 8px;
+}
+
+.dot-two {
+  height: 20px;
+  width: 20px;
+  background: #5eb50f;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 8px;
 }
