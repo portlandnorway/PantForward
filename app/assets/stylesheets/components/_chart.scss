@@ -24,3 +24,21 @@
     padding-top: 10px;
   }
 }
+
+.chart-label {
+  max-height: 40px !important;
+}
+
+.chart-styling {
+  background: #5eb50f;
+  padding: 6px;
+  width: 30px;
+  border-radius: 10px;
+}
+
+.chart-styling-two {
+  background: $brown;
+  padding: 6px;
+  width: 30px;
+  border-radius: 10px;
+}
