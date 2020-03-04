@@ -5,7 +5,7 @@ const initGlide = () => {
   const glideContainer = document.querySelector('.glide');
 
   if (glideContainer) {
-    new Glide('.glide').mount({Controls});
+    new Glide('.glide').mount();
   }
 };
 

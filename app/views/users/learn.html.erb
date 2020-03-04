@@ -3,6 +3,7 @@
     <!-- style="height:100%; position: sticky;top:0; display: block !important;" -->
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
+
           <div class="glide__slide text-center">
 
             <div class="slider-navbar d-flex justify-content-between align-items-center">
@@ -79,8 +80,8 @@
 
 
           <div class="glide__slide text-center slider-last-adjustments" style="height: 100vh;">
-            <div class="glide-image">
-              <%= image_tag("pant-forward-white.png")%>
+            <div class="glide-image logo-small">
+              <%= image_tag("logo-white.png", height: '100%', width: '160px')%>
             </div>
 
             <div class="glide-text">
@@ -89,16 +90,18 @@
             <br>
 
             <div class="button-container">
-              <%= link_to "Register Now", new_user_registration_path, class:"button" %>
+              <%= link_to "Register Now", new_user_registration_path, class: "button-white" %>
             </div>
 
-            <%= link_to "Already a user? Log in", root_path %>
+            <div class="button-container">
+              <%= link_to "Already a user? Log in", root_path, class: "link-text" %>
+            </div>
           </div>
 
       </ul>
     </div>
 
-    <div class="slider-footer d-flex justify-content-between align-items-center">
+    <div class="slider-footer d-flex justify-content-center align-items-center">
       <div class="slider-navbar-icons">
         <div class="glide__bullets" data-glide-el="controls[nav]">
           <button class="glide__bullet" data-glide-dir="=0"></button>
@@ -108,8 +111,10 @@
         </div>
       </div>
       <div class="slider-footer-icons" style="font-weight: bold">
-        NEXT <i class="fas fa-arrow-right"></i>
+<!--         NEXT <i class="fas fa-arrow-right"></i> -->
       </div>
+    </div>
+
   </div>
 </div>
 

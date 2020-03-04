@@ -7,6 +7,10 @@
   }
 }
 
+.form-adjustments {
+  background: $light-green;
+}
+
 .form-control:active {
   background-color: white;
   border-radius: 12px;
@@ -51,4 +55,8 @@
 
 .text-muted {
   margin: -20px 0;
+}
+
+.form-check-label {
+  color: $black;
 }
