@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   post '/bookings/:id/confirmed', to: 'bookings#confirmed', as: :confirmed
   post '/bookings/:id', to: 'bookings#picked_up', as: :picked_up
+
+  mount ActionCable.server => "/cable"
 end
