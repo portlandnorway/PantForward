@@ -27,7 +27,7 @@ const drawCharts = () => {
 
   drawChart('moneyEarnedChart', window.userStats.money_earned, 300);
   drawChart('charityProvidedChart', window.userStats.money_donated, 250);
-  drawChart('collectionChart', window.userStats.pick_ups, 50);
+  drawChart('collectionChart', window.userStats.pick_ups, 30);
   drawChart('donationChart', window.userStats.donations, 10);
 }
 

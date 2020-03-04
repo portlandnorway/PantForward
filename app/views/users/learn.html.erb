@@ -1,9 +1,19 @@
 <div class="glide-wrapper">
-  <div class="glide" style="height:100%, display: block !important;position: fixed;bottom: 0;">
+  <div class="glide">
+    <!-- style="height:100%; position: sticky;top:0; display: block !important;" -->
     <div data-glide-el="track" class="glide__track">
       <ul class="glide__slides">
-
           <div class="glide__slide text-center">
+
+            <div class="slider-navbar d-flex justify-content-between align-items-center">
+              <div class="slider-navbar-icons">
+                <%= image_tag("align-logo.png")%>
+              </div>
+              <div class="slider-navbar-icons" style="font-weight: bold">
+                <%= link_to 'SKIP', root_path %>
+              </div>
+            </div>
+
             <div class="glide-image">
               <%= image_tag("beach.png")%>
             </div>
@@ -16,9 +26,21 @@
               <p><center>-----</center></p>
               <h5> You can help </h5>
             </div>
+
           </div>
 
+
           <div class="glide__slide text-center">
+
+            <div class="slider-navbar d-flex justify-content-between align-items-center">
+              <div class="slider-navbar-icons">
+                <%= image_tag("align-logo.png")%>
+              </div>
+              <div class="slider-navbar-icons" style="font-weight: bold">
+                <%= link_to 'SKIP', root_path %>
+              </div>
+            </div>
+
             <div class="glide-image">
               <%= image_tag("norway.png")%>
             </div>
@@ -33,6 +55,15 @@
           </div>
 
           <div class="glide__slide text-center">
+
+            <div class="slider-navbar d-flex justify-content-between align-items-center">
+              <div class="slider-navbar-icons">
+                <%= image_tag("align-logo.png")%>
+              </div>
+              <div class="slider-navbar-icons" style="font-weight: bold">
+                <%= link_to 'SKIP', root_path %>
+              </div>
+            </div>
             <div class="glide-image">
               <%= image_tag("money.png")%>
             </div>
@@ -46,7 +77,8 @@
             </div>
           </div>
 
-          <div class="glide__slide text-center">
+
+          <div class="glide__slide text-center slider-last-adjustments" style="height: 100vh;">
             <div class="glide-image">
               <%= image_tag("pant-forward-white.png")%>
             </div>
@@ -65,6 +97,19 @@
 
       </ul>
     </div>
+
+    <div class="slider-footer d-flex justify-content-between align-items-center">
+      <div class="slider-navbar-icons">
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+          <button class="glide__bullet" data-glide-dir="=3"></button>
+        </div>
+      </div>
+      <div class="slider-footer-icons" style="font-weight: bold">
+        NEXT <i class="fas fa-arrow-right"></i>
+      </div>
   </div>
 </div>
 
