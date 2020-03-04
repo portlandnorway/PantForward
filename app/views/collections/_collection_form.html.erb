@@ -11,7 +11,7 @@
   <%= f.input :details, label: false, as: :text, placeholder: "Describe how to find your pant" %>
   <%= f.input :glass, label: 'Glass? (50kr minimum tip)' %>
   <div>
-  <center><%= f.input :tip, label: 'Tip', input_html: { id:"tip"} %></center>
+  <%= f.input :tip, label: 'Tip', input_html: { id:"tip"} %>
   </div>
   <div class="button-container">
     <%= f.button :submit, class: "button-white" %>
