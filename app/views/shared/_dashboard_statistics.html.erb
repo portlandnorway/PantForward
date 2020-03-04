@@ -4,10 +4,13 @@
 
 <div class="text-center">
   <div class="dashboard-numbers">
-    <h5>Bottles saved:</h5>
     <h1><%= @stats[:bottles_picked_up] + @stats[:bottles_donated] %></h1>
+    <h5>bottles saved</h5>
   </div>
-<div class="motivation-container">
+</div>
+
+<div class="motivation-container text-center">
+  <p>
   <% case @stats[:bottles_picked_up] + @stats[:bottles_donated] %>
   <% when 0 %>
     Come on! Get out there and save your first bottle.
@@ -24,43 +27,44 @@
   <% when 101..200 %>
     Mother earth is thanking you! Keep it up, and karma will pay you forever.
   <% end %>
+  </p>
 </div>
 
 <div class="text-center">
   <p>Your stats compared to the avarage user this month</p>
+
+<div class="d-flex justify-content-between">
+  <div class="dashboard-stats" style="position: relative; width: 44vw">
+    <p>Money earned</p>
+    <canvas id="moneyEarnedChart"></canvas>
+    <p> <%= @stats[:money_earned] %>kr</p>
+  </div>
+  <div class="dashboard-stats" style="position: relative; width: 44vw">
+    <p>Charity provided (kr)</p>
+    <canvas id="charityProvidedChart"></canvas>
+    <p> <%= @stats[:money_donated] %>kr</p>
+  </div>
 </div>
 
-  <div class="d-flex justify-content-around dashboard-numbers-two">
-    <div class="dashboard-stats">
-      <p>Money earned</p>
-      <canvas id="moneyEarnedChart"></canvas>
-      <p> <%= @stats[:money_earned] %>kr</p>
-    </div>
-    <div class="dashboard-stats">
-      <p>Charity provided (kr)</p>
-      <canvas id="charityProvidedChart"></canvas>
-      <p> <%= @stats[:money_donated] %>kr</p>
-    </div>
+<div class="d-flex justify-content-between">
+  <div class="dashboard-stats" style="position: relative; width: 44vw">
+    <p>Collections</p>
+    <canvas id="collectionChart"></canvas>
+    <p> <%= @stats[:pick_ups] %> times</p>
   </div>
-
-  <div class="d-flex justify-content-around dashboard-numbers-two">
-    <div class="dashboard-stats">
-      <p>Collections</p>
-      <canvas id="collectionChart"></canvas>
-      <p> <%= @stats[:pick_ups] %> times</p>
-    </div>
-    <div class="dashboard-stats">
-      <p>Donations</p>
-      <canvas id="donationChart"></canvas>
-      <p> <%= @stats[:donations] %> times</p>
-    </div>
+  <div class="dashboard-stats" style="position: relative; width: 44vw">
+    <p>Donations</p>
+    <canvas id="donationChart"></canvas>
+    <p> <%= @stats[:donations] %> times</p>
   </div>
+</div>
 </div>
 
 <div class="chart-label d-flex align-items-center">
   <span class="dot-two"></span>
   You
 </div>
+
 <div class="chart-label d-flex align-items-center">
   <span class="dot"></span>
   Average

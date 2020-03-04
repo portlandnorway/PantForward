@@ -2,15 +2,18 @@
   background: $light-green;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(0deg, rgba(0,191,200,1) 0%, rgba(0,173,181,1) 100%);
+  background: linear-gradient(0deg, rgba(0,191,200, .5) 0%, rgba(0,173,181, .5) 100%), image-url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+
   img {
-    margin-bottom: 60px;
-    margin-top: 90px;
+    margin-bottom: 42px;
+    margin-top: 30px;
   }
 }
 
 .logo-small img {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .logo-background-green {
