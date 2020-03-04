@@ -2,7 +2,9 @@
   <div class="row" id='donations'>
     <% if current_user.collections.any? %>
       <% current_user.collections.order(created_at: :desc).each do |donation| %>
+        <% if donation.bookings.empty? || donation.bookings.last.status == 'picked_up' || donation.bookings.last.status == 'booked' %>
           <%= render "shared/card_donator", element: donation %>
+        <% end %>
       <% end %>
     <% else %>
       <p> You have no donations. Click the plus button to donate now!</p>
