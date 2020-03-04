@@ -1,10 +1,18 @@
-<%= simple_form_for @collection do |f| %>
+<%= simple_form_for @collection,
+  wrapper: :floating_labels_form,
+  wrapper_mappings: {
+    select: :floating_labels_select
+  } do |f| %>
+  <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
   <%= f.input :address, label: false, placeholder: "Address", input_html: { id:"collection_address"} %>
-  <%= f.input :neighborhood, label: false, prompt: "Select neighborhood", collection: Collection::NEIGHBORHOODS, item_label_class: 'dropdown-item' %>
-  <%= f.input :tip, label: false, placeholder: "Tip" %>
-  <%= f.input :big_bottles, label: false, placeholder: "# of big bottles" %>
-  <%= f.input :small_bottles, label: false, placeholder: "# of small bottles" %>
-  <%= f.input :details, as: :text, label: false, placeholder: "Describe how to find your pant" %>
+  <%= f.input :neighborhood, label: "Select your neighborhood", collection: Collection::NEIGHBORHOODS, item_label_class: 'dropdown-item' %>
+  <%= f.input :big_bottles, input_html: {value: 0}, label: "# of big bottles" %>
+  <%= f.input :small_bottles, input_html: {value: 0}, label: "# of small bottles" %>
+  <%= f.input :details, label: false, as: :text, placeholder: "Describe how to find your pant" %>
+  <%= f.input :glass, label: 'Glass? (50kr minimum tip)' %>
+  <div>
+  <center><%= f.input :tip, label: 'Tip', input_html: { id:"tip"} %></center>
+  </div>
   <div class="button-container">
     <%= f.button :submit, class: "button" %>
   </div>

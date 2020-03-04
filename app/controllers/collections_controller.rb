@@ -48,6 +48,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user = current_user
     @collection.reward = @collection.reward_calculation_collection
+
     if @collection.save
       redirect_to dashboard_path(tab:'donations')
     else

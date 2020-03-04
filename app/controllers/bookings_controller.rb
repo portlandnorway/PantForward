@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.new(collection: @collection)
     @booking.save
     broadcast_booked
+    redirect_to booking_path(@booking)
   end
 
   def show
