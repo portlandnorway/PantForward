@@ -54,25 +54,21 @@
       <!-- User Statistics. Any past bookings are here. I will implement stat logic today (lines 71 - 73) -->
       <%= render "shared/dashboard_statistics" %>
 
-    <div class="button-container">
-      <%= link_to "Learn more", root_path, method: :post, class:"button" %>
-    </div>
-
   <!-- User's past bookings Collected -->
-    <div class="row" id='confirmed'>
-      <% current_user.bookings.each do |booking| %>
-        <% if booking.confirmed? %>
-          <%= render "shared/bookingCard", element: booking %>
-        <% end %>
-      <% end %>
+    <!-- <div class="row" id='confirmed'> -->
+      <%# current_user.bookings.each do |booking| %>
+        <%# if booking.confirmed? %>
+          <%#= render "shared/bookingCard", element: booking %>
+        <%# end %>
+      <%# end %>
 
   <!-- User's past collections Donated -->
-      <% current_user.collections.each do |donation| %>
-        <% if !donation.bookings.empty? && donation.bookings.last.confirmed? %>
-          <%= render "shared/card", element: donation %>
-        <% end %>
-      <% end %>
-    </div>
+      <%# current_user.collections.each do |donation| %>
+        <%# if !donation.bookings.empty? && donation.bookings.last.confirmed? %>
+          <%#= render "shared/card", element: donation %>
+        <%# end %>
+      <%# end %>
+    <!-- </div> -->
   </div>
   </div>
 </div>
