@@ -32,5 +32,5 @@ initModals();
 initAutocomplete();
 initScroll();
 initConfirmModals();
-//initGlide();
+initGlide();
 drawCharts();
