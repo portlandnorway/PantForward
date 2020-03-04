@@ -16,8 +16,8 @@ const drawCharts = () => {
             "label":"My First Dataset",
             "data":[avgValue, userValue],
             "backgroundColor":[
-              "#393E46",
-              "#5eb50f"
+              "#8f8f8f",
+              "#00ADB5"
             ]
           }
         ]

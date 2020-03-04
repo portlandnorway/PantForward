@@ -27,15 +27,19 @@
         Picked up! Waiting for confirmation.
       <% end %>
     </div>
-      <p>Note from <%= @booking.collection.user.first_name %>:
-        <% if @booking.collection.details == "" %>
-        <br>No notes for you
-        <% else %>
-        <br><i>"<%= @booking.collection.details %>"</i>
-        <% end %>
-        </p>
-      <p>Address: <%= @booking.collection.address %> &nbsp; <%= link_to "https://www.google.no/maps/place/#{@booking.collection.address}" do %>
-      <i class="fas fa-external-link-alt"></i>
+        <div class="note-container text-center">
+          <p>Note from <%= @booking.collection.user.first_name %>:
+          <% if @booking.collection.details == "" %>
+          <br>No notes for you
+          <% else %>
+          <br><i>"<%= @booking.collection.details %>"</i>
+          <% end %>
+          </p>
+        </div>
+        <div class="text-center">
+          <p>Address: <%= @booking.collection.address %> &nbsp; <%= link_to "https://www.google.no/maps/place/#{@booking.collection.address}" do %>
+          <i class="fas fa-external-link-alt"></i>
+        </div>
     <% end %></p>
   </div>
   <div>
