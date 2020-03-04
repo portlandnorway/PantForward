@@ -1,12 +1,29 @@
-// .glide {
-//   height: 100vh;
-//   background-color: $light-green;
-// }
+.glide-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #00ADB5;
+}
 
-// .glide__track {
-//   height: 100vh;
-// }
+.glide__slide h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.glide__slide h5 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
 
-// .glide__slides {
-//   height: 100vh;
-// }
+.glide__slide p {
+  font-family: 'Work Sans', sans-serif;
+  color: black;
+}
+
+.glide-image {
+
+}
+
+.glide-text {
+
+}

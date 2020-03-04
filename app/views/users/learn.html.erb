@@ -1,23 +1,71 @@
-<div class="glide" style="height:100%, display: block !important;position: fixed;bottom: 0;"">
-  <div data-glide-el="track" class="glide__track">
-    <ul class="glide__slides">
-        <div class="glide__slide text-center">
-          <%= image_tag("beach.png")%>
-            <h1>For the Environment.</h1>
+<div class="glide-wrapper">
+  <div class="glide" style="height:100%, display: block !important;position: fixed;bottom: 0;">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+
+          <div class="glide__slide text-center">
+            <div class="glide-image">
+              <%= image_tag("beach.png")%>
+            </div>
+
+            <div class="glide-text">
+              <h3>For the Environment.</h3>
+              <p> Global Warming </p>
+              <p> Scary Text Here </p>
+              <p> The whales are dying </p>
+              <p><center>-----</center></p>
+              <h5> You can help </h5>
+            </div>
           </div>
-        <div class="glide__slide text-center">
-          <%= image_tag("norway.png")%>
-            <h1>Norway - Setting the example for the World.</h1>
-        </div>
-        <div class="glide__slide text-center">
-          <%= image_tag("money.png")%>
-            <h1>Make some quick cash.</h1>
-        </div>
-        <div class="glide__slide text-center">
-          <%= image_tag("cropped-logo.png", height: '100%', width: '200px')%>
-            <h1>Let's get started.</h1>
-        </div>
-    </ul>
+
+          <div class="glide__slide text-center">
+            <div class="glide-image">
+              <%= image_tag("norway.png")%>
+            </div>
+
+            <div class="glide-text">
+              <h3>Setting the standard for the rest of the world.</h3>
+              <p>Norway is a world leader in recycling.</p>
+              <p> Still, 150 million bottles each year are not returned.</p>
+              <p><center>-----</center></p>
+              <h5> We can do better. </h5>
+            </div>
+          </div>
+
+          <div class="glide__slide text-center">
+            <div class="glide-image">
+              <%= image_tag("money.png")%>
+            </div>
+            <div class="glide-text">
+              <h3>Make some quick cash.</h3>
+              <p> You pant it, you keep it. </p>
+              <p> Earn tips from those who donate. </p>
+              <p><center>-----</center></p>
+              <h5> Be the change</h5>
+              <h5>Keep the Change. </h5>
+            </div>
+          </div>
+
+          <div class="glide__slide text-center">
+            <div class="glide-image">
+              <%= image_tag("pant-forward-white.png")%>
+            </div>
+
+            <div class="glide-text">
+              <h3 style=" color:black">Let's get started.</h3>
+            </div>
+            <br>
+
+            <div class="button-container">
+              <%= link_to "Register Now", new_user_registration_path, class:"button" %>
+            </div>
+
+            <%= link_to "Already a user? Log in", root_path, style:'color:black' %>
+          </div>
+
+      </ul>
+    </div>
   </div>
 </div>
+
 
