@@ -3,14 +3,15 @@
   wrapper_mappings: {
     select: :floating_labels_select
   } do |f| %>
+  <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
   <%= f.input :address, label: false, placeholder: "Address", input_html: { id:"collection_address"} %>
   <%= f.input :neighborhood, label: "Select your neighborhood", collection: Collection::NEIGHBORHOODS, item_label_class: 'dropdown-item' %>
-  <%= f.input :big_bottles, label: "# of big bottles" %>
-  <%= f.input :small_bottles, label: "# of small bottles" %>
+  <%= f.input :big_bottles, input_html: {value: 0}, label: "# of big bottles" %>
+  <%= f.input :small_bottles, input_html: {value: 0}, label: "# of small bottles" %>
   <%= f.input :details, label: false, as: :text, placeholder: "Describe how to find your pant" %>
   <%= f.input :glass, label: 'Glass? (50kr minimum tip)' %>
   <div>
-  <%= f.input :tip, label: 'Tip', input_html: { id:"tip"} %>
+  <center><%= f.input :tip, label: 'Tip', input_html: { id:"tip"} %></center>
   </div>
   <div class="button-container">
     <%= f.button :submit, class: "button" %>
