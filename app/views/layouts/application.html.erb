@@ -50,7 +50,7 @@
     <%= javascript_pack_tag 'application' %>
 
     <%= render 'shared/flashes' %>
-    <%= render "shared/navbar" unless current_page?(learn_path) %>
+    <%= render "shared/navbar" unless current_page?(learn_path) || current_page?(new_user_landing_path) %>
 
     <% if user_signed_in? %>
       <script>

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: :dashboard
+
   def dashboard
     # query to find user's donations through bookings, stored in an array '@history'
     @history = current_user.collections.flat_map { |collection| collection.bookings.confirmed }
@@ -19,5 +21,8 @@ class UsersController < ApplicationController
   end
 
   def learn
+  end
+
+  def new_user_landing
   end
 end
