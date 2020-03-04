@@ -7,6 +7,17 @@
   }
 }
 
+.form-label-group > input, .form-label-group > .custom-select:not([multiple]) {
+  border-radius: 10px;
+  background: white;
+  border: none;
+}
+
+#collection_address {
+  color: blue;
+  background: red;
+}
+
 .form-adjustments {
   background: $light-green;
 }

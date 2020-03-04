@@ -4,8 +4,9 @@
     select: :floating_labels_select
   } do |f| %>
   <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
-  <%= f.input :address, label: false, placeholder: "Address", input_html: { id:"collection_address"} %>
-  <%= f.input :neighborhood, label: "Select your neighborhood", collection: Collection::NEIGHBORHOODS, item_label_class: 'dropdown-item' %>
+  <%= f.input :address, label: false, placeholder: "Address", input_html: { id:"collection_address" } %>
+
+  <%= f.input :neighborhood, label: "Select your neighborhood", collection: Collection::NEIGHBORHOODS, item_label_class: 'dropdown-item', label_html: { class: 'my_class' } %>
   <%= f.input :big_bottles, input_html: {value: 0}, label: "# of big bottles" %>
   <%= f.input :small_bottles, input_html: {value: 0}, label: "# of small bottles" %>
   <%= f.input :details, label: false, as: :text, placeholder: "Describe how to find your pant" %>

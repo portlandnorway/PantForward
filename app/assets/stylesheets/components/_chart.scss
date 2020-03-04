@@ -1,3 +1,9 @@
+.algolia-places {
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #777777 !important;
+  }
+}
+
 .center-container {
   display: flex;
   justify-content: center;
@@ -11,17 +17,21 @@
   background: white;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .dashboard-stats {
-  min-width: 190px;
-  min-height: 170px;
+  margin-bottom: 22px;
   background-color: white;
-  margin: 5px;
   padding-top: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
   p {
     margin-bottom: 0 !important;
     padding-top: 10px;
