@@ -24,29 +24,21 @@
     </div>
   </div>
 
-  <!-- Note: I have used 3 different cards on this dashboard. I'm not attached to any. -->
-  <!-- I have created a BookingCard, for the User that has Booked a collection to pick up, until it is confirmed -->
-  <!-- I have created a DonatorCard, for the User that Donated, and I used to implement Edit/Destroy. This is redundant. -->
-  <!-- I have also used your Card, for User's past/historical Collections. -->
-  <!-- DonatorCard should likely be merged with your Card, and deleted. -->
-
-<!-- Collections that the user has BOOKED, but not picked up. -->
-
 <div class="dashboard-container">
   <ul class="nav nav-pills mb-3 d-flex justify-content-around" id="pills-tab" role="tablist">
     <li class="nav-item nav-item-adjustment">
-      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Collections</a>
+      <a class="nav-link <%= params[:tab]=='collections' ? 'active' : '' %>" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Collections</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Donations</a>
+      <a class="nav-link <%= params[:tab]=='donations' ? 'active' : '' %>" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Donations</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Statistics</a>
+      <a class="nav-link <%= params[:tab]=='statistics' ? 'active' : '' %>" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Statistics</a>
     </li>
   </ul>
 
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-pane fade <%= params[:tab]=='collections' ? 'show active' : '' %>" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
       <div id="accordion">
         <%= render "shared/dashboard_collections" %>
@@ -54,11 +46,11 @@
       </div>
     </div>
 
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="tab-pane fade <%= params[:tab]=='donations' ? 'show active' : '' %>" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <!-- Collections the user has DONATED, and are active (not yet confirmed) -->
       <%= render "shared/dashboard_donations" %>
     </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="tab-pane fade <%= params[:tab]=='statistics' || !params.has_key?(:tab) ? 'show active' : '' %>" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <!-- User Statistics. Any past bookings are here. I will implement stat logic today (lines 71 - 73) -->
       <%= render "shared/dashboard_statistics" %>
 
