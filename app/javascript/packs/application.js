@@ -15,7 +15,7 @@ import { setupCounterUp }     from '../plugins/init_counterUp'
 window.showNotification = (link, options = {}) => {
   const defaultOptions = {
     theme: 'nest',
-    timeout: 5000,
+    timeout: 10000,
     closeWith: ['click'],
     callbacks: {
       onClick: () => {
