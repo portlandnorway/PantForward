@@ -11,6 +11,7 @@ import { initConfirmModals }  from '../plugins/init_confirm_modal';
 import { initGlide }          from '../plugins/init_slider';
 import { drawCharts }         from '../plugins/init_charts';
 import { counterUp }          from '../plugins/init_counterUp'
+import { fadeOut }            from '../plugins/init_timer'
 
 window.showNotification = (link, options = {}) => {
   const defaultOptions = {
@@ -36,3 +37,4 @@ initConfirmModals();
 initGlide();
 drawCharts();
 counterUp();
+fadeOut();
