@@ -20,8 +20,6 @@ const initModals = () => {
     modal.addEventListener('click', event => {
       const modalContent = modal.querySelector('.modal-content');
 
-      console.log(event.target);
-
       if (!modalContent.contains(event.target)) {
         modal.style.display = "none";
       }

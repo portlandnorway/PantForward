@@ -10,7 +10,7 @@ import { initScroll }         from '../plugins/init_scroll_btn';
 import { initConfirmModals }  from '../plugins/init_confirm_modal';
 import { initGlide }          from '../plugins/init_slider';
 import { drawCharts }         from '../plugins/init_charts';
-import { counterUp }          from '../plugins/init_counterUp'
+import { setupCounterUp }          from '../plugins/init_counterUp'
 
 window.showNotification = (link, options = {}) => {
   const defaultOptions = {
@@ -35,4 +35,4 @@ initScroll();
 initConfirmModals();
 initGlide();
 drawCharts();
-counterUp();
+setupCounterUp();

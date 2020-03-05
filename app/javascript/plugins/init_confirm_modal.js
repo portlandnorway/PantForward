@@ -8,7 +8,6 @@ const initConfirmModals = () => {
 
   btn.addEventListener('click', () => { // When the user clicks on the button, open the modal
     // Get the modal
-    console.log("SHOW ME THE FIN MODAL!")
     modal.style.display = "block";
   });
 
