@@ -36,5 +36,8 @@ initScroll();
 initConfirmModals();
 initGlide();
 drawCharts();
-fadeOut();
 setupCounterUp();
+
+document.addEventListener("DOMContentLoaded", () => {
+  fadeOut();
+});
