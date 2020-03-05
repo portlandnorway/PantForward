@@ -13,19 +13,23 @@
   <p>
   <% case @stats[:bottles_picked_up] + @stats[:bottles_donated] %>
   <% when 0 %>
-    Come on! Get out there and save your first bottle.
+    <strong>Come on! Get out there and save your first bottle.</strong>
   <% when 1..10 %>
-    Great job! If you pant just one bottle, you save enough energy to fully charge your mobile 70 times
+    <strong>Great job! If you pant just one bottle, you save enough energy to fully charge your mobile 70 times. </strong>
   <% when 11..20 %>
-    You rock! This will save a lot of whales.
+    <strong>Keep it up! Did you know every second 5 bottles are not deposited? There is more work to do! </strong>
   <% when 21..30 %>
-    Yearly, the average Norwegian throws away 30 bottles in nature. Good job saving them!
+    <strong>Yearly, the average Norwegian throws away 30 bottles in nature. Good job saving them! </strong>
   <% when 31..50 %>
-    You´re on a strike! Continue that awesome job.
+    <strong>You´re on a roll! Continue that awesome job. </strong>
   <% when 51..100 %>
-    <%= @stats[:bottles_picked_up] + @stats[:bottles_donated] %> bottles saved! Thats insane.
+    <strong><%= @stats[:bottles_picked_up] + @stats[:bottles_donated] %> bottles saved! That's insane. </strong>
   <% when 101..200 %>
-    Mother earth is thanking you! Keep it up, and karma will pay you forever.
+    <strong>Mother nature is thanking you! Keep it up, every bottle makes a difference. </strong>
+  <% when 201..1000 %>
+    <strong>Fantastic! Every minute of every day 285 bottles are not recycled. Keep going! </strong>
+  <% when 1000..10000 %>
+    <strong>Wow! You are unstoppable. With your help we can get to 100% recycled! </strong>
   <% end %>
   </p>
 </div>
