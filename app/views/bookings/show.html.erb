@@ -30,14 +30,14 @@
         <div class="note-container text-center">
           <p>Note from <%= @booking.collection.user.first_name %>:
           <% if @booking.collection.details == "" %>
-          <br>No notes for you
+          <br>No notes left by <%= @booking.collection.user.first_name %>.
           <% else %>
           <br><i>"<%= @booking.collection.details %>"</i>
           <% end %>
           </p>
         </div>
         <div class="text-center">
-          <p>Address: <%= @booking.collection.address %> &nbsp; <%= link_to "https://www.google.no/maps/place/#{@booking.collection.address}" do %>
+          <p><%= @booking.collection.address %> &nbsp; <%= link_to "https://www.google.no/maps/place/#{@booking.collection.address}" do %>
           <i class="fas fa-external-link-alt"></i>
         </div>
     <% end %></p>
@@ -48,8 +48,8 @@
         style=
         "width: 100%;
         height: 35vh;
-        position: fixed;
-        bottom: 65px;"
+        bottom: 0;
+        "
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>

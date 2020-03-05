@@ -8,10 +8,7 @@ class BookingsController < ApplicationController
     if @booking.save
       broadcast_booked
       redirect_to booking_path(@booking)
-    else
-      broadcast_limit_reached
     end
-
   end
 
   def show
@@ -65,10 +62,12 @@ class BookingsController < ApplicationController
     })
   end
 
-  def broadcast_limit_reached
-    ActionCable.server.broadcast("user_channel_#{current_user.id}", {
-      content: "Sorry, you've reached the booking limit. Go collect some pant!",
-      link: dashboard_path(tab: 'collections')
-    })
-  end
+  # def broadcast_limit_reached
+  #   return unless current_user.bookings.booked.count >= 10
+
+  #   ActionCable.server.broadcast("user_channel_#{current_user.id}", {
+  #     content: "You've reached your booking limit. Go collect some pant!",
+  #     link: dashboard_path(tab: 'collections')
+  #   })
+  # end
 end

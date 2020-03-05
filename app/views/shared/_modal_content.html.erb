@@ -18,7 +18,11 @@
       </div>
     </div>
   </div>
-  <% if element.user != current_user  %>
+  <% if element.user != current_user && current_user.bookings.booked.empty?  %>
+    <div class="button-container">
+      <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
+    </div>
+  <% elsif element.user != current_user && current_user.bookings.booked.count <= 9  %>
     <div class="button-container">
       <%= link_to "Book collection", collection_bookings_path(element), method: :post, class:"button" %>
     </div>
