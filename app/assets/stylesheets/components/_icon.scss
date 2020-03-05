@@ -45,6 +45,19 @@
   }
 }
 
+.three-icons-container-modal {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+  margin-bottom: 10px;
+  p {
+    margin: 14px 0;
+    margin-bottom: 0px;
+    color: $dark-green;
+    opacity: 1;
+  }
+}
+
 .tree-icons-container {
   display: flex;
   justify-content: center;
@@ -53,6 +66,8 @@
     font-color: $black;
   }
 }
+
+
 
 .close {
   margin-top: 10px;

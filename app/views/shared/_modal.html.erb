@@ -1,0 +1,46 @@
+<!-- Modal -->
+<div class="modal fade" id="modal_<%= element.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+          <div class="d-flex justify-content-between">
+            <div>
+              <% if element.user.avatar.attached? %>
+                <%= cl_image_tag element.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
+              <% else %>
+                <i class="fas fa-user-circle avatar-small"></i>
+              <% end %>
+            </div>
+            <div class="card-collect-infos">
+              <h4>Reward: <%= element.reward %>kr</h4>
+              <p>Donated by: <%= element.user.first_name %> <%= element.user.last_name %></p>
+              <p>Neighborhood: <%= element.neighborhood %></p>
+              <div class="three-icons-container-modal">
+
+                <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
+                <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
+                <% if element.glass? %>
+                  <p><i class="fas fa-check-square"></i></i> Glass</p>
+                 <!--  <i class="fas fa-check"></i> -->
+                <% else %>
+                  <p><i class="far fa-square"></i></i></i> Glass</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+       <!--  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <% if element.user != current_user %>
+          <div class="button-container">
+            <%= link_to "Book collection", collection_bookings_path(element), method: :post, remote: true, class:"button" %>
+          </div>
+        <% end %>
+
+    </div>
+  </div>
+</div>
