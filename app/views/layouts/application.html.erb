@@ -41,14 +41,11 @@
 
     <% if user_signed_in? %>
       <script>
-        var notificationWrapper = document.getElementById('notification-wrapper');
-
         App['user_channel_<%= current_user.id %>'] = App.cable.subscriptions.create(
           { channel: 'UsersChannel', user_id: <%= current_user.id %> },
           {
             received: (data) => {
               showNotification(data.link, { type: 'success', text: data.content });
-              // notificationWrapper.insertAdjacentHTML('afterbegin', data.message_partial);
             }
         });
       </script>
