@@ -1,21 +1,32 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
   <div type="button" data-toggle="modal" data-target="#modal_<%= element.id %>">
     <div class="card-collect card-trigger" id="btn-<%= element.id %>" data-modal="myModal_<%= element.id %>">
+
+
       <% if element.user.avatar.attached? %>
-        <%= cl_image_tag element.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
+        <%= cl_image_tag element.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
       <% else %>
-        <i class="fas fa-user-circle avatar-large"></i>
+        <i class="fas fa-user-circle avatar-small"></i>
       <% end %>
+
+
       <div class="card-collect-infos">
         <h4>Reward: <%= element.reward %>kr</h4>
         <p>Donated by: <%= element.user.first_name %> <%= element.user.last_name %></p>
-        <div class="two-icons-container">
+        <div class="three-icons-container-modal">
+
           <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
           <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
+          <% if element.glass? %>
+            <p><i class="fas fa-check-square"></i></i> Glass</p>
+           <!--  <i class="fas fa-check"></i> -->
+          <% else %>
+            <p><i class="far fa-square"></i></i></i> Glass</p>
+          <% end %>
         </div>
       </div>
+
+
     </div>
   </div>
 </div>
-
-
