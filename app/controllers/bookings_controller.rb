@@ -4,11 +4,9 @@ class BookingsController < ApplicationController
   def create
     @collection = Collection.find(params[:collection_id])
     @booking = current_user.bookings.new(collection: @collection)
-
-    if @booking.save
-      broadcast_booked
-      redirect_to booking_path(@booking)
-    end
+    @booking.save
+    broadcast_booked
+    redirect_to booking_path(@booking)
   end
 
   def show
