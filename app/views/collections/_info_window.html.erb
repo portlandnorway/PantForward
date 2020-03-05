@@ -10,7 +10,9 @@
 <div class="card-collect-infos">
   <h3><%= collection.user.first_name %></h3>
   <p>Collect <%= collection.tip %>kr</p>
-  <div class="button-container">
-    <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
-  </div>
+  <% if collection.user != current_user %>
+    <div class="button-container">
+      <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
+    </div>
+  <% end %>
 </div>

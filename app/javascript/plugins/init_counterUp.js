@@ -1,11 +1,17 @@
-import counterUp from 'counterup2'
-
-const el = document.querySelector( '.counter' )
+import counterUp from 'counterup2';
 
 // Start counting, do this on DOM ready or with Waypoints.
-counterUp( el, {
+const setupCounterUp = () => {
+  const counterDiv = document.querySelector('.counter');
+
+  if (!counterDiv) {
+    return;
+  }
+
+  counterUp(counterDiv, {
     duration: 1400,
     delay: 16,
-} )
+  });
+}
 
-export { counterUp }
+export { setupCounterUp }

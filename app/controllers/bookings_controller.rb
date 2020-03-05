@@ -4,9 +4,14 @@ class BookingsController < ApplicationController
   def create
     @collection = Collection.find(params[:collection_id])
     @booking = current_user.bookings.new(collection: @collection)
-    @booking.save
-    broadcast_booked
-    redirect_to booking_path(@booking)
+
+    if @booking.save
+      broadcast_booked
+      redirect_to booking_path(@booking)
+    else
+      broadcast_limit_reached
+    end
+
   end
 
   def show
@@ -57,6 +62,13 @@ class BookingsController < ApplicationController
     ActionCable.server.broadcast("user_channel_#{@booking.collection.user_id}", {
       content: "On their way! Your donation will be picked up by #{@booking.user.first_name}.",
       link: dashboard_path(tab: 'donations')
+    })
+  end
+
+  def broadcast_limit_reached
+    ActionCable.server.broadcast("user_channel_#{current_user.id}", {
+      content: "Sorry, you've reached the booking limit. Go collect some pant!",
+      link: dashboard_path(tab: 'collections')
     })
   end
 end
