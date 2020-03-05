@@ -2114,6 +2114,11 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
+counterup2@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/counterup2/-/counterup2-1.0.4.tgz#1e7cfd6c83c2145e7ab4e923552cbf7859f34123"
+  integrity sha512-OXPt4cFxxC6g9J9r59cIwsZfTkXaR8eMVxUY2P6yviFclsx3QRbYtfqwtCb0a/Dz2y2ATy7hnpV4Y1LQsfurwQ==
+
 create-ecdh@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.3.tgz#c9111b6f33045c4697f144787f9254cdc77c45ff"
