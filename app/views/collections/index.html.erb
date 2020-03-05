@@ -34,6 +34,7 @@
     <% @collections.each do |collection| %>
       <% if collection.bookings.empty? %>
         <%= render "shared/card", element: collection %>
+        <%= render "shared/modal", element: collection %>
       <% end %>
     <% end %>
   </div>
