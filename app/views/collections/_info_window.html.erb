@@ -1,18 +1,24 @@
-<div class="modal-card-content">
-  <div>
-    <% if collection.user.avatar.attached? %>
-      <%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
+<div class="card">
+  <% if collection.user.avatar.attached? %>
+    <center><%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small" %></center>
+  <% else %>
+    <i class="fas fa-user-circle avatar-large"></i>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= collection.user.first_name %></h5>
+    <p class="card-text">
+      <%= collection.neighborhood  %> <br>
+      <i class="fas fa-trophy"></i><%= collection.reward %> <br>
+      <i class="fas fa-wine-bottle"></i> <%= collection.big_bottles + collection.small_bottles %>
+    </p>
+    <% if collection.user != current_user %>
+      <div class="button-container">
+        <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
+      </div>
     <% else %>
-      <i class="fas fa-user-circle avatar-large"></i>
+    <div class="button-container">
+        <%= link_to "My Donations", dashboard_path(tab:'donations'), class:"button" %>
+      </div>
     <% end %>
   </div>
-</div>
-<div class="card-collect-infos">
-  <h3><%= collection.user.first_name %></h3>
-  <p>Collect <%= collection.tip %>kr</p>
-  <% if collection.user != current_user %>
-    <div class="button-container">
-      <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
-    </div>
-  <% end %>
 </div>

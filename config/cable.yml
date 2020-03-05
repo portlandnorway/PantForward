@@ -1,5 +1,7 @@
-development:
-  adapter: async
+redis: &redis
+  adapter: redis
+
+development: *redis
 
 test:
   adapter: test
