@@ -3,7 +3,7 @@
     <div class="center-container">
       <h3>Booking confirmed</h3>
     </div>
-      <div class="modal-card-content">
+      <div class="d-flex justify-content-between">
         <div>
           <% if @booking.collection.user.avatar.attached? %>
             <%= cl_image_tag @booking.collection.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
