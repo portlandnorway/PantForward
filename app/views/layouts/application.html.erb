@@ -12,38 +12,25 @@
     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
     <title><%#= meta_title %></title>
-   <!--  <meta name="description" content="<%#= meta_description %>">
- -->
+    <meta name="description" content="<%#= meta_description %>">
+
     <!-- Facebook Open Graph data -->
-<!--     <meta property="og:title" content="<%#= meta_title %>" />
+    <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="<%#= request.original_url %>" />
-    <meta property="og:image" content="<%#= meta_image %>" />
-    <meta property="og:description" content="<%#= meta_description %>" />
-    <meta property="og:site_name" content="<%#= meta_title %>" /> -->
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <!-- Twitter Card data -->
-    <!-- <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="<%#= DEFAULT_META["twitter_account"] %>">
-    <meta name="twitter:title" content="<%#= meta_title %>">
-    <meta name="twitter:description" content="<%#= meta_description %>">
-    <meta name="twitter:creator" content="<%#= DEFAULT_META["twitter_account"] %>">
-    <meta name="twitter:image:src" content="<%#= meta_image %>"> -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
   <body>
-
-  <!--  <% if notice %>
-      <div class="alert alert-info alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= notice %>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <%= alert %>
-      </div>
-    <% end %> -->
 
     <%= yield %>
     <%= javascript_include_tag 'application' %>
