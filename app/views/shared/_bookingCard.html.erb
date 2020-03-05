@@ -1,18 +1,35 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
   <%= link_to booking_path(element), {class:"card-collect text-decoration-none"} do %>
-    <% if element.collection.user.avatar.attached? %>
-      <%= cl_image_tag element.collection.user.avatar.key, class:"avatar-small", alt:"avatar-large" %>
+   <% if element.user.avatar.attached? %>
+      <%= cl_image_tag element.user.avatar.key, class:"avatar-small", alt:"avatar-small-collection" %>
     <% else %>
       <i class="fas fa-user-circle avatar-small"></i>
     <% end %>
 
-    <div class="card-collect-infos">
+
+    <div class="card-collect-infos-collect">
       <h4>Reward: <%= element.collection.reward %>kr</h4>
-      <p>Donated by: <%= element.collection.user.first_name %> <%= element.collection.user.last_name %></p>
-      <div class="three-icons-container">
-        <p><i class="fas fa-wine-bottle"></i> <%= element.collection.big_bottles + element.collection.small_bottles %></p>
-        <p><i class="fas fa-trophy"></i> <%= element.collection.tip %> kr</p>
-      </div>
+      <p>Donated by: <%= element.collection.user.first_name %></p>
+
+      <% if element.collection.glass? %>
+        <div class="three-icons-container-modal">
+          <p><i class="fas fa-trophy"></i> <%= element.collection.tip %>kr</p>
+          <p><i class="fas fa-wine-bottle"></i> <%= element.collection.big_bottles + element.collection.small_bottles %></p>
+          <p><i class="fas fa-check-square"></i></i> Glass</p>
+         </div>
+      <% else %>
+        <div class="two-icons-container">
+          <p><i class="fas fa-trophy"></i> <%= element.collection.tip %>kr</p>
+          <p><i class="fas fa-wine-bottle"></i> <%= element.collection.big_bottles + element.collection.small_bottles %></p>
+           <!--  <i class="fas fa-check"></i> -->
+        </div>
+      <% end %>
+
     </div>
-  <% end %>
+    <% end %>
 </div>
+
+
+
+
+

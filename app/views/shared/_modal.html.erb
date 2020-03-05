@@ -7,26 +7,31 @@
           <div class="d-flex justify-content-between">
             <div>
               <% if element.user.avatar.attached? %>
-                <%= cl_image_tag element.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
+                <%= cl_image_tag element.user.avatar.key, class:"avatar-small-modal", alt:"avatar-small" %>
               <% else %>
-                <i class="fas fa-user-circle avatar-small"></i>
+                <i class="fas fa-user-circle avatar-small-modal"></i>
               <% end %>
             </div>
+
+
+
             <div class="card-collect-infos">
               <h4>Reward: <%= element.reward %>kr</h4>
-              <p>Donated by: <%= element.user.first_name %> <%= element.user.last_name %></p>
+              <p>Donated by: <%= element.user.first_name %></p>
               <p>Neighborhood: <%= element.neighborhood %></p>
-              <div class="three-icons-container-modal">
-
-                <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
-                <p><i class="fas fa-trophy"></i> <%= element.tip %> kr</p>
-                <% if element.glass? %>
+               <% if element.glass? %>
+                <div class="three-icons-container-modal">
+                  <p><i class="fas fa-trophy"></i> <%= element.tip %>kr</p>
+                  <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
                   <p><i class="fas fa-check-square"></i></i> Glass</p>
-                 <!--  <i class="fas fa-check"></i> -->
-                <% else %>
-                  <p><i class="far fa-square"></i></i></i> Glass</p>
+                 </div>
+              <% else %>
+                <div class="two-icons-container">
+                  <p><i class="fas fa-trophy"></i> <%= element.tip %>kr</p>
+                  <p><i class="fas fa-wine-bottle"></i> <%= element.big_bottles + element.small_bottles %></p>
+                   <!--  <i class="fas fa-check"></i> -->
+                </div>
                 <% end %>
-              </div>
             </div>
           </div>
 
