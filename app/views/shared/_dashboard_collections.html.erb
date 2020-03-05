@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card card-border-bottom">
   <div class="card-header" id="headingOne">
     <h5 class="mb-0">
       <button class="btn btn-link collapsable collapsed d-flex justify-content-start align-items-center collapse-btn-adjustment" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -9,52 +9,51 @@
   </div>
   <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
     <div class="card-body">
-          <div class="header-wrapper">
-            <% if current_user.bookings.booked.any? %>
-            <% else %>
-              <p> Nothing booked. Head to the map to get another!</p>
-            <% end %>
-          </div>
-        <div class="container" id='booked'>
-          <div class="row">
-           <% current_user.bookings.each do |booking| %>
-              <% if booking.status == 'booked' %>
-                <%= render "shared/bookingCard", element: booking %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+      <div class="header-wrapper">
+        <% if current_user.bookings.booked.any? %>
+        <% else %>
+          <p> Nothing booked. Head to the map to get another!</p>
+        <% end %>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsable collapsed collapse-btn-adjustment d-flex justify-content-start align-items-center" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <i class="fas fa-chevron-down">&nbsp; </i>
-            Waiting for confirmation
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-
-  <!-- Collections that the user has BOOKED & PICKED UP, but not are not confirmed by Donator. -->
-          <div class="header-wrapper">
-            <% if current_user.bookings.picked_up.any? %>
-              <p>Great job! The donator has been notified, and will confirm soon.</p>
-            <% else %>
-              <p> No collection is listed as collected </p>
+      <div class="container" id='booked'>
+        <div class="row">
+         <% current_user.bookings.each do |booking| %>
+            <% if booking.status == 'booked' %>
+              <%= render "shared/bookingCard", element: booking %>
             <% end %>
-          </div>
-          <div class="row" id='picked_up'>
-             <% current_user.bookings.each do |booking| %>
-              <% if booking.picked_up? %>
-                <%= render "shared/bookingCard", element: booking %>
-              <% end %>
-            <% end %>
-          </div>
-
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="card card-border-bottom">
+  <div class="card-header" id="headingTwo">
+    <h5 class="mb-0">
+      <button class="btn btn-link collapsable collapsed collapse-btn-adjustment d-flex justify-content-start align-items-center" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <i class="fas fa-chevron-down">&nbsp; </i>
+        Waiting for confirmation
+      </button>
+    </h5>
+  </div>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <div class="card-body">
+      <!-- Collections that the user has BOOKED & PICKED UP, but not are not confirmed by Donator. -->
+      <div class="header-wrapper">
+        <% if current_user.bookings.picked_up.any? %>
+          <p>Great job! The donator has been notified, and will confirm soon.</p>
+        <% else %>
+          <p> No collection is listed as collected </p>
+        <% end %>
+      </div>
+      <div class="row" id='picked_up'>
+        <% current_user.bookings.each do |booking| %>
+          <% if booking.picked_up? %>
+            <%= render "shared/bookingCard", element: booking %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
