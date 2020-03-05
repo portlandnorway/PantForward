@@ -8,8 +8,6 @@ class BookingsController < ApplicationController
     if @booking.save
       broadcast_booked
       redirect_to booking_path(@booking)
-    else
-      broadcast_limit_reached
     end
 
   end
