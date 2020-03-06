@@ -68,7 +68,7 @@ male_img = 0
 female_img = 0
 
 
-m_first_names = ["Francis", "Kent Ove", "Amund", "Alexander", "Chris", "Per", "Eivind", "Frank", "Gøran", "Jostein", "Ole", "Bjørn"]
+m_first_names = ["Stein", "Kent Ove", "Amund", "Alexander", "Chris", "Per", "Eivind", "Frank", "Gøran", "Jostein", "Ole", "Bjørn"]
 m_last_names = ["Johansson-Merric", "Johansen", "Valø", "Asbøll", "Erikssen", "Danielsen", "Halvorsen", "Røe", "Lundstrom", "Johnssen", "Pettersen", "Kvalvågnes"]
 
 
