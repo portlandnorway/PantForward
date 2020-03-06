@@ -70,13 +70,17 @@ const drawCharts = () => {
   const statistics = document.getElementById('pills-contact-tab');
   const counterDiv = document.querySelector('.counter');
 
-  $(statistics).on('shown.bs.tab', () => {
+  const animateCharts = () => {
     counterUp(counterDiv, { duration: 1400, delay: 16 });
     drawBarChart('moneyEarnedChart', window.userStats.money_earned, 300);
     drawBarChart('charityProvidedChart', window.userStats.money_donated, 250);
     drawCircleChart('collectionChart', window.userStats.pick_ups, 30);
     drawCircleChart('donationChart', window.userStats.donations, 10);
-  });
+  }
+
+  animateCharts();
+
+  $(statistics).on('shown.bs.tab', animateCharts);
 }
 
 export { drawCharts };
