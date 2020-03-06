@@ -1,16 +1,28 @@
-<div class="card shadow-lg rounded-sm">
+<div class="card shadow-lg rounded-ls" style="border-radius: 10px;">
   <% if collection.user.avatar.attached? %>
     <center><%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small", style:"margin:10px 0px 0px 0px;" %></center>
   <% else %>
-    <i class="fas fa-user-circle avatar-large mt-10 "></i>
+    <i class="fas fa-user-circle avatar-small"></i>
   <% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= collection.user.first_name %></h5>
-    <p class="card-text">
-      <%= collection.neighborhood  %> <br>
-      <i class="fas fa-trophy"></i><%= collection.reward %> <br>
-      <i class="fas fa-wine-bottle"></i> <%= collection.big_bottles + collection.small_bottles %>
-    </p>
+  <div class="card-body m-10">
+        <p style="font-weight: bold;
+    margin-top: 10px;"><%= collection.user.first_name %></p>
+
+        <% if collection.glass? %>
+          <div class="three-icons-container-popup">
+            <p><i class="fas fa-trophy"></i> <%= collection.tip %>kr</p>
+            <p><i class="fas fa-wine-bottle"></i> <%= collection.big_bottles + collection.small_bottles %></p>
+            <p><i class="fas fa-check-square"></i></i> Glass</p>
+           </div>
+        <% else %>
+          <div class="two-icons-container-popup">
+            <p><i class="fas fa-trophy"></i> <%= collection.tip %>kr</p>
+            <p><i class="fas fa-wine-bottle"></i> <%= collection.big_bottles + collection.small_bottles %></p>
+             <!--  <i class="fas fa-check"></i> -->
+          </div>
+          <% end %>
+
+
     <% if collection.user != current_user %>
       <div class="button-container">
         <%= link_to "Pick-up", collection_bookings_path(collection), method: :post, class:"button" %>
@@ -20,5 +32,9 @@
         <%= link_to "My Donations", dashboard_path(tab:'donations'), class:"button" %>
       </div>
     <% end %>
+
+
   </div>
 </div>
+
+
