@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card shadow-lg rounded-sm">
   <% if collection.user.avatar.attached? %>
-    <center><%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small" %></center>
+    <center><%= cl_image_tag collection.user.avatar.key, class:"avatar-small", alt:"avatar-small", style:"margin:10px 0px 0px 0px;" %></center>
   <% else %>
-    <i class="fas fa-user-circle avatar-large"></i>
+    <i class="fas fa-user-circle avatar-large mt-10 "></i>
   <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= collection.user.first_name %></h5>
