@@ -28,37 +28,45 @@
 .dashboard-stats {
   margin-bottom: 22px;
   background-color: white;
-  padding-top: 15px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
+  canvas {
+    margin: 5px 5px 0 5px;
+  }
+
   p {
     margin-bottom: 0 !important;
-    padding-top: 10px;
   }
 }
 
 .chart-label {
   margin: 0px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-}
+  margin-bottom: 50px;
+  justify-content: center;
 
-.dot {
-  height: 15px;
-  width: 15px;
-  background: $dark-white;
-  opacity: 0.5;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 8px;
-}
+  .dot {
+    height: 15px;
+    width: 15px;
+    background: $dark-white;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 8px;
+  }
 
-.dot-two {
-  height: 15px;
-  width: 15px;
-  background: $light-green;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 8px;
+  .dot-two {
+    height: 15px;
+    width: 15px;
+    background: $light-green;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 8px;
+  }
+
+  .chart-label-item {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
 }
