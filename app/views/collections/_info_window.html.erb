@@ -6,7 +6,8 @@
   <% end %>
   <div class="card-body m-10">
         <p style="font-weight: bold;
-    margin-top: 10px;"><%= collection.user.first_name %></p>
+    margin-top: 10px; margin-bottom: 0"><%= collection.user.first_name %></p>
+     <p style="margin-top: 0px; margin-bottom: 0;">Reward: <%= collection.reward %>kr</p>
 
         <% if collection.glass? %>
           <div class="three-icons-container-popup">
