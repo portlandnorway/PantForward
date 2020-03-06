@@ -33,7 +33,7 @@
       <a class="nav-link <%= params[:tab]=='donations' ? 'active' : '' %>" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Donations</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link <%= params[:tab]=='statistics' ? 'active' : '' %>" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Statistics</a>
+      <a class="nav-link <%= params[:tab]=='statistics' ? 'active' : '' %>" id="pills-contact-tab" data-toggle="pill" href="#pills-statistics" role="tab" aria-controls="pills-contact" aria-selected="false">Statistics</a>
     </li>
   </ul>
 
@@ -49,7 +49,7 @@
       <!-- Collections the user has DONATED, and are active (not yet confirmed) -->
       <%= render "shared/dashboard_donations" %>
     </div>
-    <div class="tab-pane fade <%= params[:tab]=='statistics' || !params.has_key?(:tab) ? 'show active' : '' %>" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="tab-pane fade <%= params[:tab]=='statistics' || !params.has_key?(:tab) ? 'show active' : '' %>" id="pills-statistics" role="tabpanel" aria-labelledby="pills-contact-tab">
       <!-- User Statistics. Any past bookings are here. I will implement stat logic today (lines 71 - 73) -->
       <%= render "shared/dashboard_statistics" %>
 
