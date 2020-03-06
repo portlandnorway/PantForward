@@ -13,6 +13,29 @@
   min-width: 300px;
 }
 
+.card-collect-donation {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: background-color 0.1s;
+  overflow: hidden;
+  height: 140px;
+  align-items: center;
+  margin: 8px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 300px;
+  img {
+    margin-right: 20px;
+  }
+  h4 {
+    margin: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
 .card-collect p {
   margin-bottom: 0;
   margin-top: 8px;

@@ -52,6 +52,7 @@
   justify-content: space-between;
   margin: 2px;
   margin-bottom: 10px;
+  width: 180px;
   p {
     margin: 14px 0;
     margin-bottom: 0px;
@@ -95,4 +96,9 @@ a.mapboxgl-ctrl-logo {
       transform: rotate(-90deg);
     }
   }
+}
+
+.far {
+  color: $light-green;
+  font-weight: bold;
 }

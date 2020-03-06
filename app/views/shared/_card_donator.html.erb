@@ -1,9 +1,9 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
   <div class="card-collect" data-modal='dennis_modal'>
     <% if element.user.avatar.attached? %>
-      <%= cl_image_tag element.user.avatar.key, class:"avatar-small", alt:"avatar-small" %>
+      <%= cl_image_tag element.user.avatar.key, class:"avatar-small-dashboard", alt:"avatar-small-dashboard" %>
     <% else %>
-      <img class="avatar-large" alt="avatar-large" src="https://i.pravatar.cc/200"/>
+      <img class="avatar-small-dashboard" alt="avatar-large" src="https://i.pravatar.cc/200"/>
     <% end %>
 
     <div class="card-collect-infos">
@@ -28,7 +28,3 @@
     </div>
   </div>
 </div>
-
-<% if element.bookings.any? %>
-  <%= render "shared/modal_confirmation", booking: element.bookings.last %>
-<% end %>

@@ -13,7 +13,7 @@
     </p>
     <% if collection.user != current_user %>
       <div class="button-container">
-        <%= link_to "Book", collection_bookings_path(collection), method: :post, class:"button" %>
+        <%= link_to "Pick-up", collection_bookings_path(collection), method: :post, class:"button" %>
       </div>
     <% else %>
     <div class="button-container">
