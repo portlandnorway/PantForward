@@ -14,6 +14,11 @@
 .glide__slide h3 {
   font-weight: bold;
   color: $black;
+  width: 80%;
+  margin-bottom: 30px;
+  width: 375px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .glide__slide h5 {
   font-weight: bold;
@@ -68,11 +73,20 @@
 
 .glide-text {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .glide-text p {
   color: black;
   font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.glide-image {
+  margin-bottom: 0px;
 }
 
 
