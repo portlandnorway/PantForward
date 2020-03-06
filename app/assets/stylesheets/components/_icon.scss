@@ -47,6 +47,17 @@
   }
 }
 
+.two-icons-container-popup {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px;
+  p {
+    margin-bottom: 0px;
+    color: $dark-green;
+    opacity: 1;
+  }
+}
+
 .three-icons-container-modal {
   display: flex;
   justify-content: space-between;
@@ -61,6 +72,18 @@
   }
 }
 
+.three-icons-container-popup {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+  width: 180px;
+  p {
+    margin: 14px 0;
+    margin-bottom: 0px;
+    color: $dark-green;
+    opacity: 1;
+  }
+}
 .tree-icons-container {
   display: flex;
   justify-content: center;
