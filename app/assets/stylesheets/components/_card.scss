@@ -6,11 +6,34 @@
   overflow: hidden;
   height: 140px;
   align-items: center;
-  margin: 10px;
+  margin: 8px;
   background-color: white;
   border-radius: 10px;
   padding: 10px;
   min-width: 300px;
+}
+
+.card-collect-donation {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: background-color 0.1s;
+  overflow: hidden;
+  height: 140px;
+  align-items: center;
+  margin: 8px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 300px;
+  img {
+    margin-right: 20px;
+  }
+  h4 {
+    margin: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .card-collect p {
@@ -22,8 +45,12 @@
 
 .card-collect-infos {
   padding: 10px;
+  padding-left: 0;
   min-width: 200px;
   text-decoration: none;
+  h4 {
+    margin: 0;
+  }
   h4:active {
     text-decoration: none;
     margin-bottom: 0;

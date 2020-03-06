@@ -1,9 +1,9 @@
 <div class="page-container">
   <div class="custom-container">
-    <div class="center-container">
+    <div class="center-container justify-header-show">
       <h3>Booking confirmed</h3>
     </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-around">
         <div>
           <% if @booking.collection.user.avatar.attached? %>
             <%= cl_image_tag @booking.collection.user.avatar.key, class:"avatar-large", alt:"avatar-large" %>
@@ -14,10 +14,24 @@
         <div class="card-collect-info-custom">
           <p>Donator: <%= @booking.collection.user.first_name %> <%= @booking.collection.user.last_name%></p>
           <p>Phone: <%= @booking.collection.user.phone_number %></p>
-          <div class="two-icons-container">
-            <p><i class="fas fa-wine-bottle"></i> <%= @booking.collection.big_bottles + @booking.collection.small_bottles %></p>
-            <p><i class="fas fa-trophy"></i> <%= @booking.collection.tip %> kr</p>
-          </div>
+
+               <% if @booking.collection.glass? %>
+                <div class="three-icons-container-modal">
+                  <p><i class="fas fa-trophy"></i> <%= @booking.collection.tip %>kr</p>
+                  <p><i class="fas fa-wine-bottle"></i> <%= @booking.collection.big_bottles + @booking.collection.small_bottles %></p>
+                  <p><i class="fas fa-check-square"></i></i> Glass</p>
+                 </div>
+              <% else %>
+                <div class="two-icons-container">
+                  <p><i class="fas fa-trophy"></i> <%= @booking.collection.tip %>kr</p>
+                  <p><i class="fas fa-wine-bottle"></i> <%= @booking.collection.big_bottles + @booking.collection.small_bottles %></p>
+                   <!--  <i class="fas fa-check"></i> -->
+                </div>
+                <% end %>
+
+
+
+
         </div>
       </div>
       <div class="button-container">
