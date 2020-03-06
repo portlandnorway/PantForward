@@ -41,21 +41,21 @@ class BookingsController < ApplicationController
 
   def broadcast_pick_up
     ActionCable.server.broadcast("user_channel_#{@booking.collection.user_id}", {
-      content: "<h4><strong>Your collection was picked up by #{@booking.user.first_name}!</strong></h4>",
+      content: "<h4>Your collection was picked up by #{@booking.user.first_name}!</h4>",
       link: dashboard_path(tab: 'donations')
     })
   end
 
   def broadcast_confirmed
     ActionCable.server.broadcast("user_channel_#{@booking.user_id}", {
-      content: "<h4><strong>Confirmed! #{@booking.collection.user.first_name} confirmed your pick-up.</strong></h4>",
+      content: "<h4>Confirmed! #{@booking.collection.user.first_name} confirmed your pick-up.</h4>",
       link: dashboard_path(tab: 'statistics')
     })
   end
 
   def broadcast_booked
     ActionCable.server.broadcast("user_channel_#{@booking.collection.user_id}", {
-      content: "<h4><strong>On their way! Your donation will be picked up by #{@booking.user.first_name}.</strong></h4>",
+      content: "<h4>On their way! Your donation will be picked up by #{@booking.user.first_name}.</h4>",
       link: dashboard_path(tab: 'donations')
     })
   end
