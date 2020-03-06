@@ -80,7 +80,7 @@ const drawCharts = () => {
 
   animateCharts();
 
-  $(statistics).on('shown.bs.tab', animateCharts);
+  $(statistics).on('shown.bs.tab', () => { animateCharts() });
 }
 
 export { drawCharts };
