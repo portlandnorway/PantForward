@@ -14,23 +14,23 @@
 
       <div class="dropdown-menu scrollable-menu" id="neighborhoods" aria-labelledby="dropdownMenuButton">
         <% Collection::NEIGHBORHOODS.each do |neighborhood| %>
-          <%= link_to neighborhood, root_path(q:neighborhood), class: "dropdown-item" %>
+          <%= link_to neighborhood, root_path(q: neighborhood, anchor: 'rd'), class: "dropdown-item" %>
         <% end %>
       </div>
     </div>
 
-    <div class="dropdown-filters">
+    <div class="dropdown-filters" id='rd'>
       <button class="button dropdown-toggle scrollable-menu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Filter by
       </button>
 
       <div class="dropdown-menu scrollable-menu" id="filters" aria-labelledby="dropdownMenuButton">
-        <%= link_to "Reward", root_path(q:'reward'), class: "dropdown-item" %>
-        <%= link_to "Newest", root_path(q:'newest'), class: "dropdown-item" %>
+        <%= link_to "Reward", root_path(q:'reward', anchor: 'rd'), class: "dropdown-item" %>
+        <%= link_to "Newest", root_path(q:'newest', anchor: 'rd'), class: "dropdown-item" %>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" id="rd">
     <% @collections.each do |collection| %>
       <% if collection.bookings.empty? %>
         <%= render "shared/card", element: collection %>
