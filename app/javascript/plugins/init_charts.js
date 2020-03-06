@@ -1,5 +1,6 @@
 import Chart from 'chart.js';
 import 'chartjs-top-round-bar';
+import counterUp from 'counterup2';
 
 const COLORS = ['#8f8f8f', '#00ADB5'];
 
@@ -58,18 +59,24 @@ const drawCharts = () => {
           label: '# of Votes',
           data: [userValue, avgValue, 0, avgValue],
           barThickness: 50,
-          backgroundColor: COLORS.reverse(),
-          borderColor: COLORS.reverse(),
+          backgroundColor: [...COLORS].reverse(),
+          borderColor: [...COLORS].reverse(),
           borderWidth: 0
         }]
       }
     });
   }
 
-  drawBarChart('moneyEarnedChart', window.userStats.money_earned, 300);
-  drawBarChart('charityProvidedChart', window.userStats.money_donated, 250);
-  drawCircleChart('collectionChart', window.userStats.pick_ups, 30);
-  drawCircleChart('donationChart', window.userStats.donations, 10);
+  const statistics = document.getElementById('pills-contact-tab');
+  const counterDiv = document.querySelector('.counter');
+
+  $(statistics).on('shown.bs.tab', () => {
+    counterUp(counterDiv, { duration: 1400, delay: 16 });
+    drawBarChart('moneyEarnedChart', window.userStats.money_earned, 300);
+    drawBarChart('charityProvidedChart', window.userStats.money_donated, 250);
+    drawCircleChart('collectionChart', window.userStats.pick_ups, 30);
+    drawCircleChart('donationChart', window.userStats.donations, 10);
+  });
 }
 
 export { drawCharts };
