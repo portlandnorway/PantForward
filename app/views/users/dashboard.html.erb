@@ -16,7 +16,7 @@
         <p><%= current_user.email %></p>
       </div>
     </div>
-      <div>
+      <div style="align-self: start;">
         <%= link_to destroy_user_session_path, method: :delete do %>
           <i class="fas fa-sign-out-alt"></i>
         <% end %>
@@ -27,7 +27,7 @@
 <div class="dashboard-container">
   <ul class="nav nav-pills mb-3 d-flex justify-content-around" id="pills-tab" role="tablist">
     <li class="nav-item nav-item-adjustment">
-      <a class="nav-link <%= params[:tab]=='collections' ? 'active' : '' %>" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Collections</a>
+      <a class="nav-link <%= params[:tab]=='collections' ? 'active' : '' %>" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Pick-ups</a>
     </li>
     <li class="nav-item">
       <a class="nav-link <%= params[:tab]=='donations' ? 'active' : '' %>" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Donations</a>
