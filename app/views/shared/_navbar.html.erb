@@ -19,8 +19,8 @@
   <% end %>
 
 <% if current_page?(dashboard_path) %>
-  <%= link_to image_tag('profile-green.png'), dashboard_path(tab:'statistics'), class: "navbar-icons-modified" %>
+  <%= link_to image_tag('profile-green.png'), dashboard_path(tab:'collections'), class: "navbar-icons-modified" %>
 <% else %>
-  <%= link_to image_tag('profile-white.png'), dashboard_path(tab:'statistics'), class: "navbar-icons-modified" %>
+  <%= link_to image_tag('profile-white.png'), dashboard_path(tab:'collections'), class: "navbar-icons-modified" %>
 <% end %>
 </nav>
