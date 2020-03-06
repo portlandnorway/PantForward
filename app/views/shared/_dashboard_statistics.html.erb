@@ -43,6 +43,7 @@
     <canvas id="moneyEarnedChart"></canvas>
     <p> <%= @stats[:money_earned] %>kr</p>
   </div>
+
   <div class="dashboard-stats" style="position: relative; width: 44vw">
     <p>Charity provided (kr)</p>
     <canvas id="charityProvidedChart"></canvas>
@@ -63,14 +64,12 @@
   </div>
 </div>
 </div>
-<div class="d-flex">
-  <div class="chart-label d-flex align-items-center">
-    <span class="dot-two"></span>
-    You
-  </div>
 
-  <div class="chart-label d-flex align-items-center">
-    <span class="dot"></span>
-    Average
+<div class="chart-label d-flex">
+  <div class="chart-label-item">
+    <span class="dot-two"></span>You
+  </div>
+  <div class="chart-label-item">
+    <span class="dot"></span>Average
   </div>
 </div>
