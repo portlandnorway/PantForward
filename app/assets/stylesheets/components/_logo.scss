@@ -2,13 +2,13 @@
   background: $light-green;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(0deg, rgba(0,191,200, .5) 0%, rgba(0,173,181, .5) 100%), image-url('background.jpeg');
+  background: image-url('background.jpeg');
   background-size: cover;
   background-position: center;
 
   img {
     margin-bottom: 50px;
-    margin-top: 80px;
+    margin-top: 55px;
   }
 }
 
