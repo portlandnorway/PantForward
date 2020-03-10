@@ -8,7 +8,7 @@
 
     <div class="card-collect-infos">
       <div class="d-flex justify-content-between">
-      <h4>Reward: <%= element.reward %>kr</h4>
+      <h4>Reward: <%= element.reward_calculation_collection %>kr</h4>
       <% if element.bookings.empty? %>
         <%= link_to edit_collection_path(element) do %>
           <i class="far fa-edit"></i>
