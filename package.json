@@ -8,7 +8,7 @@
     "chart.js": "^2.9.3",
     "chartjs-top-round-bar": "^1.0.1",
     "counterup2": "^1.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mapbox-gl": "^1.8.0",
     "noty": "^3.2.0-beta",
     "places.js": "^1.18.1",
